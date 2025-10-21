@@ -1,11 +1,12 @@
 {
-  "$schema": "https://raw.githubusercontent.com/daxlib/daxlib/refs/heads/main/schemas/manifest/1.0.0/manifest.1.0.0.schema.json",
-  "id": "Contoso.Sample",
-  "version": "0.1.0",
-  "authors": "Contoso Ltd",
-  "description": "A sample DAX Lib package for demonstration purposes only.",
-  "tags": "SAMPLE,TEMPLATE,DEMO",
-  "projectUrl": "https://contoso.com/sample-library",
-  "repositoryUrl": "https://github.com/contoso/sample-library",
-  "readme": "/README.md"
+  "$schema": "https://raw.githubusercontent.com/sql-bi/daxlib/refs/heads/main/schemas/manifest/1.0.0/manifest.1.0.0.schema.json",
+  "id": "EvaluationContext.Colour",
+  "version": "0.1.3-beta",
+  "authors": "Jake Duddy",
+  "description": "A DAX UDF library for manipulation of hex colours for Power BI",
+  "tags": "DAX,UDF,colour",
+  "releaseNotes": "Small → Medium/Large library reorganization. Added README.md",
+  "projectUrl": "https://evaluationcontext.github.io/EvaluationContext.Colour/",
+  "repositoryUrl": "https://github.com/EvaluationContext/evaluationcontext.colour",
+  "icon": "/icon.png"
 }

@@ -1,0 +1,173 @@
+site_name: EvaluationContext.Colour
+site_url: https://evaluationcontext.github.io/evaluationcontext.colour/
+repo_name: evaluationcontext.colour
+repo_url: https://github.com/EvaluationContext/evaluationcontext.colour
+site_author: Jake Duddy
+site_description: A DAX UDF library for manipulation of hex colours for Power BI
+copyright: >
+    Copyright &copy; 2024 - 2025 Jake Duddy -
+    <a href="/evaluationcontext.colour/privacy/">Privacy Policy</a> -
+    <a href="#__consent">Change cookie settings</a>
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  favicon: assets/images/favicon.ico
+  logo: assets/images/icon.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: pink
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference  
+  features:
+    # - announce.dismiss
+    # - content.action.edit
+    # - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tooltips
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    - navigation.sections
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.top
+    # - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    # - navigation.footer
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.path
+    - toc.follow
+    - toc.integrate
+  
+extra:
+  google_site_verification: SAsOJ1OUHiMcP4hI-eYBkBD6nbsLx6hc2nWjLqdCtd0
+  analytics:
+    provider: google
+    property: G-QLDJ0V4NT0
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jakeduddy/
+      name: Jake Duddy
+    - icon: fontawesome/brands/github
+      link: https://github.com/EvaluationContext
+      name: EvaluationContext
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to measure and analyze how visitors interact with our site. 
+      This helps us understand what content is most valuable and improve your experience. 
+      You can change your preferences at any time.
+    actions:
+      - accept
+      - manage
+      - reject
+
+plugins:
+  - search
+
+extra_css:
+  - assets/css/pill.css
+  - assets/css/codeblock.css
+  - assets/css/button.css
+  - assets/css/colorBlocks.css
+  - assets/css/cards.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - Functions:
+      - functions/index.md
+      - Conversion:
+        - conversion/index.md
+        - Hex.ToInt: conversion/Hex.ToInt.md
+        - Int.ToHex: conversion/Int.ToHex.md
+        - RGB.ToHex: conversion/RGB.ToHex.md
+        - HSL.ToHex: conversion/HSL.ToHex.md
+      - hex-manipulation:
+        - hex-manipulation/index.md
+        - Hex.Hue: hex-manipulation/Hex.Hue.md
+        - Hex.Saturation: hex-manipulation/Hex.Saturation.md
+        - Hex.Luminance: hex-manipulation/Hex.Luminance.md
+        - Hex.Alpha: hex-manipulation/Hex.Alpha.md
+        - Hex.AdjustHue: hex-manipulation/Hex.AdjustHue.md
+        - Hex.AdjustSaturation: hex-manipulation/Hex.AdjustSaturation.md
+        - Hex.AdjustLuminance: hex-manipulation/Hex.AdjustLuminance.md
+        - Hex.AdjustAlpha: hex-manipulation/Hex.AdjustAlpha.md
+        - Hex.AdjustColour: hex-manipulation/Hex.AdjustColour.md
+        - Hex.TextColour: hex-manipulation/Hex.TextColour.md
+      - Themes:
+        - themes/index.md
+        - Hex.Theme: themes/Hex.Theme.md
+        - Hex.LinearTheme: themes/Hex.LinearTheme.md
+        - Hex.Interpolate: themes/Hex.Interpolate.md
+  - Change Log: changeLog.md

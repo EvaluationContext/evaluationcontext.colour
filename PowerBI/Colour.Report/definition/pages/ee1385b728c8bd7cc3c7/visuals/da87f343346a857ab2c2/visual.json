@@ -1,0 +1,405 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "da87f343346a857ab2c2",
+  "position": {
+    "x": 60.797315218273837,
+    "y": 436.80532626052127,
+    "z": 4001,
+    "height": 333.91756204498091,
+    "width": 1130.8300630598935,
+    "tabOrder": 7001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hex Interpolate"
+                    }
+                  },
+                  "Property": "index"
+                }
+              },
+              "queryRef": "Sum(Hex Interpolate.index)",
+              "nativeQueryRef": "index"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hex Interpolate"
+                    }
+                  },
+                  "Property": "startHexColour"
+                }
+              },
+              "queryRef": "Hex Interpolate.startHexColour",
+              "nativeQueryRef": "startHexColour"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hex Interpolate"
+                    }
+                  },
+                  "Property": "endHexColour"
+                }
+              },
+              "queryRef": "Hex Interpolate.endHexColour",
+              "nativeQueryRef": "endHexColour"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hex Interpolate"
+                    }
+                  },
+                  "Property": "percentage"
+                }
+              },
+              "queryRef": "Hex Interpolate.percentage",
+              "nativeQueryRef": "percentage"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hex Interpolate"
+                    }
+                  },
+                  "Property": "Hex Interpolate"
+                }
+              },
+              "queryRef": "Hex Interpolate.Hex Interpolate",
+              "nativeQueryRef": "Hex Interpolate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Hex Interpolate"
+                  }
+                },
+                "Property": "index"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Hex Interpolate"
+                            }
+                          },
+                          "Property": "startHexColour"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Hex Interpolate.startHexColour"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Hex Interpolate"
+                            }
+                          },
+                          "Property": "endHexColour"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Hex Interpolate.endHexColour"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Hex Interpolate"
+                        }
+                      },
+                      "Property": "Hex Interpolate"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Hex Interpolate.Hex Interpolate"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "dataBars": {
+              "minValue": {
+                "expr": {
+                  "Literal": {
+                    "Value": "0D"
+                  }
+                }
+              },
+              "maxValue": {
+                "expr": {
+                  "Literal": {
+                    "Value": "1D"
+                  }
+                }
+              },
+              "positiveColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#b3b3b3'"
+                      }
+                    }
+                  }
+                }
+              },
+              "negativeColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'minColor'"
+                      }
+                    }
+                  }
+                }
+              },
+              "axisColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'foreground'"
+                      }
+                    }
+                  }
+                }
+              },
+              "reverseDirection": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "hideText": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "totalMatchingOption": {
+                "expr": {
+                  "Literal": {
+                    "Value": "1L"
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Hex Interpolate.percentage"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "95.70686584858505D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Hex Interpolate.percentage"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Interpolate'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f209177364fe944f88ea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Hex Interpolate"
+              }
+            },
+            "Property": "startHexColour"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f3c26abe93d40ba6dbac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Hex Interpolate"
+              }
+            },
+            "Property": "endHexColour"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9f81ccdea1520ec3ac98",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Hex Interpolate"
+              }
+            },
+            "Property": "percentage"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "780ad62752c86c8a5cf1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Hex Interpolate"
+              }
+            },
+            "Property": "Hex Interpolate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

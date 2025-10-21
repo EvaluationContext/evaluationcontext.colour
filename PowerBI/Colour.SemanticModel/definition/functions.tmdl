@@ -22,10 +22,11 @@ function 'EvaluationContext.Colour.Int.ToHex' =
 				)
 		
 			RETURN Hex
+	lineageTag: cb9ab3a8-3549-4e45-9538-75ed8e8fb0d1
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Hex to Int conversion
 /// hex		STRING	The hex value to convert i.e "1A"
@@ -46,10 +47,11 @@ function 'EvaluationContext.Colour.Hex.ToInt' =
 				)
 		
 			RETURN Result
+	lineageTag: 6662049d-6101-4e8b-bf63-052f135c4925
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// RGB to Hex conversion
 /// red		INT64	The red value (0-255)
@@ -69,10 +71,11 @@ function 'EvaluationContext.Colour.RGB.ToHex' =
 			EvaluationContext.Colour.Int.ToHex( green, 2 ) &
 			EvaluationContext.Colour.Int.ToHex( blue, 2 ) &
 			IF( NOT ISBLANK( alpha ), EvaluationContext.Colour.Int.ToHex( alpha * 255, 2 ) )
+	lineageTag: 0dd149c5-855f-4b87-977a-d3601ff503ed
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// HSL to Hex conversion
 /// h		INT64	Hue (0-360)
@@ -118,10 +121,11 @@ function 'EvaluationContext.Colour.HSL.ToHex' =
 				IF( NOT ISBLANK( alpha ), EvaluationContext.Colour.Int.ToHex( alpha * 255, 2 ) )
 		
 			RETURN result
+	lineageTag: 29794546-0842-4352-824d-153a1d568ecb
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Hue of Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -151,10 +155,11 @@ function 'EvaluationContext.Colour.Hex.Hue' =
 			VAR result = ROUND(H, 0)
 		
 			RETURN result
+	lineageTag: a9040b99-a894-487a-8770-7a3203eccb62
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Saturation of Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -182,10 +187,11 @@ function 'EvaluationContext.Colour.Hex.Saturation' =
 				)
 		
 			RETURN S
+	lineageTag: 385f5b1e-311a-49cf-8bb7-c3002f971682
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Luminance of Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -207,10 +213,11 @@ function 'EvaluationContext.Colour.Hex.Luminance' =
 			VAR result = ROUND( L, 4 ) / 255
 		
 			RETURN result
+	lineageTag: b6f6a915-1ae7-437d-b5c4-47a134ebb51d
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Alpha of Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -225,10 +232,11 @@ function 'EvaluationContext.Colour.Hex.Alpha' =
 			VAR result = ROUND( Alpha / 255, 4 )
 		
 			RETURN result
+	lineageTag: 75a41fbb-4c27-49f1-91e7-767b7aab22a2
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Adjust Hue of a hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -248,10 +256,11 @@ function 'EvaluationContext.Colour.Hex.AdjustHue' =
 		
 			RETURN
 				EvaluationContext.Colour.HSL.ToHex( NewH, S, L, A )
+	lineageTag: ec04b48d-cc36-4122-b372-3445ce125a89
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Adjust Saturation of a hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -271,10 +280,11 @@ function 'EvaluationContext.Colour.Hex.AdjustSaturation' =
 		
 			RETURN
 				EvaluationContext.Colour.HSL.ToHex( H, NewS, L, A )
+	lineageTag: f3ea4eeb-a4ea-480d-a62e-d8301630f877
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Adjust Luminance of a hex color
 /// hexColor		STRING	The hex color to evaluate i.e "#01B8AA"
@@ -294,10 +304,11 @@ function 'EvaluationContext.Colour.Hex.AdjustLuminance' =
 		
 			RETURN
 				EvaluationContext.Colour.HSL.ToHex( H, S, NewL, A )
+	lineageTag: 9a6d7f63-0632-4b57-badd-8069bbadb01a
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Adjust Alpha of a Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -316,10 +327,11 @@ function 'EvaluationContext.Colour.Hex.AdjustAlpha' =
 			VAR result = "#" & CleanHex & NewA
 		
 			RETURN result
+	lineageTag: 1b2fdeb2-f842-4923-86bf-71cd30641d5b
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Adjust Hue, Saturation, Luminance and Alpha of a hex color
 /// hexColor			STRING	The hex color to evaluate i.e "#01B8AA"
@@ -342,57 +354,11 @@ function 'EvaluationContext.Colour.Hex.AdjustColour' =
 			VAR Step4 = IF( alphaChange = 0, Step3, EvaluationContext.Colour.Hex.AdjustAlpha( Step3, alphaChange ) )
 		
 			RETURN Step4
+	lineageTag: 5d181fff-4b70-4724-80da-5a367358f7c8
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
-
-/// Interpolate between two Hex colors by a given percentage
-/// startHexColour	STRING	The starting Hex colour (e.g., "#FF0000")
-/// endHexColour	STRING	The ending Hex colour (e.g., "#0000FF")  
-/// percentage		DOUBLE	The interpolation percentage (0.0 = startColor, 1.0 = endColor)
-function 'EvaluationContext.Colour.Hex.Interpolate' = 
-		(
-			startHexColour: STRING,
-			endHexColour: STRING,
-			percentage: DOUBLE
-		) =>
-
-			// Clamp percentage between 0 and 1
-			VAR _ClampedPercentage = MIN( MAX( percentage, 0 ), 1 )
-
-			// Clean Hex codes
-			VAR _StartHex = SUBSTITUTE( startHexColour, "#", "" )
-			VAR _EndHex = 	SUBSTITUTE( endHexColour, "#", "" )
-
-			// Extract and convert RGB components using your existing Hex.ToInt function
-			VAR _StartR = 	EvaluationContext.Colour.Hex.ToInt( MID( _StartHex, 1, 2 ) )
-			VAR _StartG = 	EvaluationContext.Colour.Hex.ToInt( MID( _StartHex, 3, 2 ) )
-			VAR _StartB = 	EvaluationContext.Colour.Hex.ToInt( MID( _StartHex, 5, 2 ) )
-
-			VAR _EndR = 	EvaluationContext.Colour.Hex.ToInt( MID( _EndHex, 1, 2 ) )
-			VAR _EndG = 	EvaluationContext.Colour.Hex.ToInt( MID( _EndHex, 3, 2 ) )
-			VAR _EndB = 	EvaluationContext.Colour.Hex.ToInt( MID( _EndHex, 5, 2 ) )
-
-			// Interpolate RGB values
-			VAR _InterpolatedR = ROUND( _StartR + ( _EndR - _StartR ) * _ClampedPercentage, 0 )
-			VAR _InterpolatedG = ROUND( _StartG + ( _EndG - _StartG ) * _ClampedPercentage, 0 )
-			VAR _InterpolatedB = ROUND( _StartB + ( _EndB - _StartB ) * _ClampedPercentage, 0 )
-
-			// Convert back to hex using your existing RGB.ToHex function
-			VAR result = 
-				EvaluationContext.Colour.RGB.ToHex(
-					_InterpolatedR,
-					_InterpolatedG, 
-					_InterpolatedB,
-					BLANK()  // No alpha
-				)
-
-			RETURN result
-
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
-
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Select theme colour, wrapping around to the start if variant exceeds available options
 /// themeName	STRING	The theme name e.g. "Office", "Power BI"
@@ -548,10 +514,11 @@ function 'EvaluationContext.Colour.Hex.Theme' =
 				)
 		
 			RETURN SelectedColor
+	lineageTag: 117a3be2-642f-4778-aa35-148b6c289e21
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Linear gradient of a hex colour
 /// hexColor		STRING	The base hex color e.g. "#01B8AA"
@@ -575,10 +542,11 @@ function 'EvaluationContext.Colour.Hex.LinearTheme' =
 				)
 		
 			RETURN Hex
+	lineageTag: dfae10c6-0422-4d25-acb9-1cdb185d403d
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
 
 /// Select a text color (black or white) based on background hex color for contrast
 /// backgroundHex	STRING	The background hex color to evaluate i.e "#01B8AA"
@@ -591,7 +559,97 @@ function 'EvaluationContext.Colour.Hex.TextColour' =
 			VAR result = IF( L > 0.5, "#000000", "#FFFFFF")  // dark text for light backgrounds, light text for dark backgrounds
 		
 			RETURN result
+	lineageTag: 9995eeb6-5533-4bc7-abe4-dba66d3e174b
 
 	annotation DAXLIB_PackageId = EvaluationContext.Colour
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = 0.1.2-beta
+
+/// Interpolate between two HEX colors by a given percentage
+/// startHexColour	STRING	The starting HEX colour (e.g., "#FF0000")
+/// endHexColour	STRING	The ending HEX colour (e.g., "#0000FF")
+/// percentage		DOUBLE	The interpolation percentage (0.0 = startColor, 1.0 = endColor)
+function 'EvaluationContext.SVG.HexInterpolate' =
+		(
+			startHexColour: STRING,
+			endHexColour: STRING,
+			percentage: DOUBLE
+		) =>
+		
+			// Clamp percentage between 0 and 1
+			VAR _ClampedPercentage = MIN( MAX( percentage, 0 ), 1 )
+		
+			// Clean HEX codes
+			VAR _StartHex = SUBSTITUTE( startHexColour, "#", "" )
+			VAR _EndHex = 	SUBSTITUTE( endHexColour, "#", "" )
+		
+			// Extract and convert RGB components using your existing Hex.ToInt function
+			VAR _StartR = 	EvaluationContext.Colour.Hex.ToInt( MID( _StartHex, 1, 2 ) )
+			VAR _StartG = 	EvaluationContext.Colour.Hex.ToInt( MID( _StartHex, 3, 2 ) )
+			VAR _StartB = 	EvaluationContext.Colour.Hex.ToInt( MID( _StartHex, 5, 2 ) )
+		
+			VAR _EndR = 	EvaluationContext.Colour.Hex.ToInt( MID( _EndHex, 1, 2 ) )
+			VAR _EndG = 	EvaluationContext.Colour.Hex.ToInt( MID( _EndHex, 3, 2 ) )
+			VAR _EndB = 	EvaluationContext.Colour.Hex.ToInt( MID( _EndHex, 5, 2 ) )
+		
+			// Interpolate RGB values
+			VAR _InterpolatedR = ROUND( _StartR + ( _EndR - _StartR ) * _ClampedPercentage, 0 )
+			VAR _InterpolatedG = ROUND( _StartG + ( _EndG - _StartG ) * _ClampedPercentage, 0 )
+			VAR _InterpolatedB = ROUND( _StartB + ( _EndB - _StartB ) * _ClampedPercentage, 0 )
+		
+			// Convert back to hex using your existing RGB.ToHex function
+			VAR result =
+				EvaluationContext.Colour.RGB.ToHex(
+					_InterpolatedR,
+					_InterpolatedG,
+					_InterpolatedB,
+					BLANK()  // No alpha
+				)
+		
+			RETURN result
+	lineageTag: b9cebeec-52d2-48bf-8a4b-2f537c68aa51
+
+/// Interpolate between two Hex colors by a given percentage
+/// startHexColour	STRING	The starting Hex colour (e.g., "#FF0000")
+/// endHexColour	STRING	The ending Hex colour (e.g., "#0000FF")
+/// percentage		DOUBLE	The interpolation percentage (0.0 = startColor, 1.0 = endColor)
+function 'EvaluationContext.Colour.Hex.Interpolate' =
+		(
+			startHexColour: STRING,
+			endHexColour: STRING,
+			percentage: DOUBLE
+		) =>
+		
+			// Clamp percentage between 0 and 1
+			VAR _ClampedPercentage = MIN( MAX( percentage, 0 ), 1 )
+		
+			// Clean Hex codes
+			VAR _StartHex = SUBSTITUTE( startHexColour, "#", "" )
+			VAR _EndHex = 	SUBSTITUTE( endHexColour, "#", "" )
+		
+			// Extract and convert RGB components using your existing Hex.ToInt function
+			VAR _StartR = 	EvaluationContext.Colour.Hex.ToInt( MID( _StartHex, 1, 2 ) )
+			VAR _StartG = 	EvaluationContext.Colour.Hex.ToInt( MID( _StartHex, 3, 2 ) )
+			VAR _StartB = 	EvaluationContext.Colour.Hex.ToInt( MID( _StartHex, 5, 2 ) )
+		
+			VAR _EndR = 	EvaluationContext.Colour.Hex.ToInt( MID( _EndHex, 1, 2 ) )
+			VAR _EndG = 	EvaluationContext.Colour.Hex.ToInt( MID( _EndHex, 3, 2 ) )
+			VAR _EndB = 	EvaluationContext.Colour.Hex.ToInt( MID( _EndHex, 5, 2 ) )
+		
+			// Interpolate RGB values
+			VAR _InterpolatedR = ROUND( _StartR + ( _EndR - _StartR ) * _ClampedPercentage, 0 )
+			VAR _InterpolatedG = ROUND( _StartG + ( _EndG - _StartG ) * _ClampedPercentage, 0 )
+			VAR _InterpolatedB = ROUND( _StartB + ( _EndB - _StartB ) * _ClampedPercentage, 0 )
+		
+			// Convert back to hex using your existing RGB.ToHex function
+			VAR result =
+				EvaluationContext.Colour.RGB.ToHex(
+					_InterpolatedR,
+					_InterpolatedG,
+					_InterpolatedB,
+					BLANK()  // No alpha
+				)
+		
+			RETURN result
+	lineageTag: 95522646-16a9-499a-8840-7b354abe8361
+

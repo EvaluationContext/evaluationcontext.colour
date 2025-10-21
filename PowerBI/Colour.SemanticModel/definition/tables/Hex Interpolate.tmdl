@@ -1,0 +1,71 @@
+table 'Hex Interpolate'
+	lineageTag: 3947a4af-1dea-4b2a-8279-f755445e1807
+
+	measure 'Hex Interpolate' =
+			
+			EvaluationContext.Colour.Hex.Interpolate(
+			    SELECTEDVALUE( 'Hex Interpolate'[startHexColour] ),
+			    SELECTEDVALUE( 'Hex Interpolate'[endHexColour] ),
+			    SELECTEDVALUE( 'Hex Interpolate'[percentage] )
+			)
+		lineageTag: 73c92adc-fb32-4d08-aaef-294d3d78a322
+
+	column startHexColour
+		lineageTag: 072cce83-aceb-40b3-af89-70af0a121376
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [startHexColour]
+
+		annotation SummarizationSetBy = Automatic
+
+	column endHexColour
+		lineageTag: 1332e722-c5a7-4682-8c20-14b364139a21
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [endHexColour]
+
+		annotation SummarizationSetBy = Automatic
+
+	column percentage
+		formatString: 0%;-0%;0%
+		lineageTag: 1a303bcc-bfa6-4017-a7a7-c26f5f61f02f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [percentage]
+
+		annotation SummarizationSetBy = User
+
+	column index
+		formatString: 0
+		lineageTag: 2137812e-5eee-4019-852c-c4af1a852c35
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [index]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Hex Interpolate' = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE(
+				    "index", INTEGER,
+				    "startHexColour", STRING,
+				    "endHexColour", STRING, 
+				    "percentage", DOUBLE,
+				    {
+				        { 1, "#C9DDFF", "#2CF6B3", 0.0},
+				        { 2, "#C9DDFF", "#2CF6B3", 0.25},
+				        { 3, "#C9DDFF", "#2CF6B3", 0.5},
+				        { 4, "#C9DDFF", "#2CF6B3", 0.75},
+				        { 5, "#C9DDFF", "#2CF6B3", 1.0},
+				        { 6, "#C9DDFF", "#C1AAC0", 0.3},
+				        { 7, "#C9DDFF", "#C1AAC0", 0.5},
+				        { 8, "#C9DDFF", "#ECB0E1", 0.4},
+				        { 9, "#C9DDFF", "#ECB0E1", 0.8}
+				    }
+				)
+				```
+
+	annotation PBI_Id = 6861eab8413b40a38a20b2aace1497aa
+

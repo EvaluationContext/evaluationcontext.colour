@@ -1,0 +1,119 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "79de4828d99bc338192d",
+  "position": {
+    "x": 32.73701588676284,
+    "y": 22.448239465208804,
+    "z": 4001,
+    "height": 619.19727191534275,
+    "width": 242.253917562045,
+    "tabOrder": 4001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Integers"
+                    }
+                  },
+                  "Property": "Value"
+                }
+              },
+              "queryRef": "Table 2.Value",
+              "nativeQueryRef": "Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Integers"
+                    }
+                  },
+                  "Property": "IntToHex"
+                }
+              },
+              "queryRef": "Table 2.DEC2HEX",
+              "nativeQueryRef": "IntToHex"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Integers"
+                    }
+                  },
+                  "Property": "HEXToInt"
+                }
+              },
+              "queryRef": "Table 2.HEX2DEC",
+              "nativeQueryRef": "HEXToInt"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "66.8388439221735D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Table 2.Value"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Conversion'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

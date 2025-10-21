@@ -482,3 +482,13 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# MKDocs
+site
+*~
+__pycache__
+.cache
+
+# PBIP
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
