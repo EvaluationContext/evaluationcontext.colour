@@ -23,9 +23,9 @@ function 'EvaluationContext.Colour.Int.ToHex' =
 		
 			RETURN Hex
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Hex to Int conversion
 /// hex		STRING	The hex value to convert i.e "1A"
@@ -47,9 +47,9 @@ function 'EvaluationContext.Colour.Hex.ToInt' =
 		
 			RETURN Result
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// RGB to Hex conversion
 /// red		INT64	The red value (0-255)
@@ -70,9 +70,9 @@ function 'EvaluationContext.Colour.RGB.ToHex' =
 			EvaluationContext.Colour.Int.ToHex( blue, 2 ) &
 			IF( NOT ISBLANK( alpha ), EvaluationContext.Colour.Int.ToHex( alpha * 255, 2 ) )
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// HSL to Hex conversion
 /// h		INT64	Hue (0-360)
@@ -119,9 +119,9 @@ function 'EvaluationContext.Colour.HSL.ToHex' =
 		
 			RETURN result
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Hue of Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -152,9 +152,9 @@ function 'EvaluationContext.Colour.Hex.Hue' =
 		
 			RETURN result
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Saturation of Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -183,9 +183,9 @@ function 'EvaluationContext.Colour.Hex.Saturation' =
 		
 			RETURN S
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Luminance of Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -208,9 +208,9 @@ function 'EvaluationContext.Colour.Hex.Luminance' =
 		
 			RETURN result
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Alpha of Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -226,9 +226,9 @@ function 'EvaluationContext.Colour.Hex.Alpha' =
 		
 			RETURN result
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Adjust Hue of a hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -249,9 +249,9 @@ function 'EvaluationContext.Colour.Hex.AdjustHue' =
 			RETURN
 				EvaluationContext.Colour.HSL.ToHex( NewH, S, L, A )
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Adjust Saturation of a hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -272,9 +272,9 @@ function 'EvaluationContext.Colour.Hex.AdjustSaturation' =
 			RETURN
 				EvaluationContext.Colour.HSL.ToHex( H, NewS, L, A )
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Adjust Luminance of a hex color
 /// hexColor		STRING	The hex color to evaluate i.e "#01B8AA"
@@ -295,9 +295,9 @@ function 'EvaluationContext.Colour.Hex.AdjustLuminance' =
 			RETURN
 				EvaluationContext.Colour.HSL.ToHex( H, S, NewL, A )
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Adjust Alpha of a Hex color
 /// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
@@ -317,9 +317,9 @@ function 'EvaluationContext.Colour.Hex.AdjustAlpha' =
 		
 			RETURN result
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Adjust Hue, Saturation, Luminance and Alpha of a hex color
 /// hexColor			STRING	The hex color to evaluate i.e "#01B8AA"
@@ -343,9 +343,9 @@ function 'EvaluationContext.Colour.Hex.AdjustColour' =
 		
 			RETURN Step4
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Interpolate between two Hex colors by a given percentage
 /// startHexColour	STRING	The starting Hex colour (e.g., "#FF0000")
@@ -390,9 +390,9 @@ function 'EvaluationContext.Colour.Hex.Interpolate' =
 
 			RETURN result
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Select theme colour, wrapping around to the start if variant exceeds available options
 /// themeName	STRING	The theme name e.g. "Office", "Power BI"
@@ -549,9 +549,9 @@ function 'EvaluationContext.Colour.Hex.Theme' =
 		
 			RETURN SelectedColor
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Linear gradient of a hex colour
 /// hexColor		STRING	The base hex color e.g. "#01B8AA"
@@ -576,9 +576,9 @@ function 'EvaluationContext.Colour.Hex.LinearTheme' =
 		
 			RETURN Hex
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Select a text color (black or white) based on background hex color for contrast
 /// backgroundHex	STRING	The background hex color to evaluate i.e "#01B8AA"
@@ -592,6 +592,6 @@ function 'EvaluationContext.Colour.Hex.TextColour' =
 		
 			RETURN result
 
-	annotation DAXLIB_PackageId = EvaluationContext.Colour
+	annotation DAXLIB_PackageId = __PLACEHOLDER_PACKAGE_ID__
 
-	annotation DAXLIB_PackageVersion = 0.1.3-beta
+	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
