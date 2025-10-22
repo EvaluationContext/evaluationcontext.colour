@@ -30,7 +30,7 @@ permissions:
 env:
   # Name of your fork of the DAX Lib repository. 
   # Update `daxlib` if your fork has a different name.
-  DAXLIBFORK_NAME: ${{ github.repository_owner }}/evaluationcontext.colour
+  DAXLIBFORK_NAME: ${{ github.repository_owner }}/daxlib
 
 jobs:
   publish:
