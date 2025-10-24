@@ -4,10 +4,10 @@ repo_name: evaluationcontext.colour
 repo_url: https://github.com/EvaluationContext/evaluationcontext.colour
 site_author: Jake Duddy
 site_description: A DAX UDF library for manipulation of hex colours for Power BI
-copyright: >
-    Copyright &copy; 2024 - 2025 Jake Duddy -
-    <a href="/evaluationcontext.colour/privacy/">Privacy Policy</a> -
-    <a href="#__consent">Change cookie settings</a>
+# copyright: >
+#     Copyright &copy; 2024 - 2025 Jake Duddy -
+#     <a href="/evaluationcontext.colour/privacy/">Privacy Policy</a> -
+#     <a href="#__consent">Change cookie settings</a>
 theme:
   name: material
   language: en
@@ -61,7 +61,7 @@ theme:
     - toc.integrate
   
 extra:
-  google_site_verification: SAsOJ1OUHiMcP4hI-eYBkBD6nbsLx6hc2nWjLqdCtd0
+  # google_site_verification: SAsOJ1OUHiMcP4hI-eYBkBD6nbsLx6hc2nWjLqdCtd0
   analytics:
     provider: google
     property: G-QLDJ0V4NT0
@@ -72,16 +72,16 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/EvaluationContext
       name: EvaluationContext
-  consent:
-    title: Cookie consent
-    description: >-
-      We use cookies to measure and analyze how visitors interact with our site. 
-      This helps us understand what content is most valuable and improve your experience. 
-      You can change your preferences at any time.
-    actions:
-      - accept
-      - manage
-      - reject
+  # consent:
+  #   title: Cookie consent
+  #   description: >-
+  #     We use cookies to measure and analyze how visitors interact with our site. 
+  #     This helps us understand what content is most valuable and improve your experience. 
+  #     You can change your preferences at any time.
+  #   actions:
+  #     - accept
+  #     - manage
+  #     - reject
 
 plugins:
   - search
