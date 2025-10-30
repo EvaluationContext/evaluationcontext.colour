@@ -1,6 +1,7 @@
 /// Int to Hex conversion
-/// number	INT64	The integer to convert
-/// padTo	INT64	Optional: Minimum number of characters in result
+/// @param {int} number – The integer to convert
+/// @param {int} padTo – Minimum number of characters in result
+/// @returns Hex string of the integer value
 function 'EvaluationContext.Colour.Int.ToHex' =
 		(
 			number: INT64,
@@ -28,7 +29,8 @@ function 'EvaluationContext.Colour.Int.ToHex' =
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// Hex to Int conversion
-/// hex		STRING	The hex value to convert i.e "1A"
+/// @param {string} hex – The hex value to convert (e.g., "1A")
+/// @returns Integer value of the hex string
 function 'EvaluationContext.Colour.Hex.ToInt' =
 		(
 			hex: STRING
@@ -52,10 +54,11 @@ function 'EvaluationContext.Colour.Hex.ToInt' =
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// RGB to Hex conversion
-/// red		INT64	The red value (0-255)
-/// green	INT64	The green value (0-255)
-/// blue	INT64	The blue value (0-255)
-/// alpha	DOUBLE	Optional: The alpha value (0-1)
+/// @param {int} red – The red value (0-255)
+/// @param {int} green – The green value (0-255)
+/// @param {int} blue – The blue value (0-255)
+/// @param {decimal} alpha – The alpha value (0-1)
+/// @returns Hex color string with optional alpha
 function 'EvaluationContext.Colour.RGB.ToHex' =
 		(
 			red: INT64,
@@ -75,10 +78,11 @@ function 'EvaluationContext.Colour.RGB.ToHex' =
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
 /// HSL to Hex conversion
-/// h		INT64	Hue (0-360)
-/// s		DOUBLE	Saturation (0-1)
-/// l		DOUBLE	Lightness (0-1)
-/// alpha	DOUBLE	Optional: The alpha value (0-1)
+/// @param {int} h – Hue (0-360)
+/// @param {decimal} s – Saturation (0-1)
+/// @param {decimal} l – Lightness (0-1)
+/// @param {decimal} alpha – The alpha value (0-1)
+/// @returns Hex color string with optional alpha
 function 'EvaluationContext.Colour.HSL.ToHex' =
 		(
 			h: INT64,
@@ -123,8 +127,9 @@ function 'EvaluationContext.Colour.HSL.ToHex' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Hue of Hex color
-/// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
+/// Extracts the hue component from a hex color
+/// @param {string} hexColor – The hex color to evaluate (e.g., "#01B8AA")
+/// @returns Hue value (0-360)
 function 'EvaluationContext.Colour.Hex.Hue' =
 		(
 			hexColor: STRING
@@ -156,8 +161,9 @@ function 'EvaluationContext.Colour.Hex.Hue' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Saturation of Hex color
-/// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
+/// Extracts the saturation component from a hex color
+/// @param {string} hexColor – The hex color to evaluate (e.g., "#01B8AA")
+/// @returns Saturation value (0-1)
 function 'EvaluationContext.Colour.Hex.Saturation' =
 		(
 			hexColor: STRING
@@ -187,8 +193,9 @@ function 'EvaluationContext.Colour.Hex.Saturation' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Luminance of Hex color
-/// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
+/// Extracts the luminance component from a hex color
+/// @param {string} hexColor – The hex color to evaluate (e.g., "#01B8AA")
+/// @returns Luminance value (0-1)
 function 'EvaluationContext.Colour.Hex.Luminance' =
 		(
 			hexColor: STRING
@@ -212,8 +219,9 @@ function 'EvaluationContext.Colour.Hex.Luminance' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Alpha of Hex color
-/// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
+/// Extracts the alpha component from a hex color
+/// @param {string} hexColor – The hex color to evaluate (e.g., "#01B8AA")
+/// @returns Alpha value (0-1)
 function 'EvaluationContext.Colour.Hex.Alpha' =
 		(
 			hexColor: STRING
@@ -230,9 +238,10 @@ function 'EvaluationContext.Colour.Hex.Alpha' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Adjust Hue of a hex color
-/// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
-/// hueChange	DOUBLE	The hue adjustment in degrees (-360 to 360)
+/// Adjusts the hue of a hex color
+/// @param {string} hexColor – The hex color to adjust (e.g., "#01B8AA")
+/// @param {decimal} hueChange – The hue adjustment in degrees (-360 to 360)
+/// @returns Modified hex color
 function 'EvaluationContext.Colour.Hex.AdjustHue' =
 		(
 			hexColor: STRING,
@@ -253,9 +262,10 @@ function 'EvaluationContext.Colour.Hex.AdjustHue' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Adjust Saturation of a hex color
-/// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
-/// saturationChange	DOUBLE	The saturation adjustment (-1 to 1)
+/// Adjusts the saturation of a hex color
+/// @param {string} hexColor – The hex color to adjust (e.g., "#01B8AA")
+/// @param {decimal} saturationChange – The saturation adjustment (-1 to 1)
+/// @returns Modified hex color
 function 'EvaluationContext.Colour.Hex.AdjustSaturation' =
 		(
 			hexColor: STRING,
@@ -276,9 +286,10 @@ function 'EvaluationContext.Colour.Hex.AdjustSaturation' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Adjust Luminance of a hex color
-/// hexColor		STRING	The hex color to evaluate i.e "#01B8AA"
-/// luminanceChange	DOUBLE	The luminance adjustment (-1 to 1)
+/// Adjusts the luminance of a hex color
+/// @param {string} hexColor – The hex color to adjust (e.g., "#01B8AA")
+/// @param {decimal} luminanceChange – The luminance adjustment (-1 to 1)
+/// @returns Modified hex color
 function 'EvaluationContext.Colour.Hex.AdjustLuminance' =
 		(
 			hexColor: STRING,
@@ -299,9 +310,10 @@ function 'EvaluationContext.Colour.Hex.AdjustLuminance' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Adjust Alpha of a Hex color
-/// hexColor	STRING	The hex color to evaluate i.e "#01B8AA"
-/// alphaChange	DOUBLE	The alpha adjustment (-1 to 1)
+/// Adjusts the alpha component of a hex color
+/// @param {string} hexColor – The hex color to adjust (e.g., "#01B8AA")
+/// @param {decimal} alphaChange – The alpha adjustment (-1 to 1)
+/// @returns Modified hex color
 function 'EvaluationContext.Colour.Hex.AdjustAlpha' =
 		(
 			hexColor: STRING,
@@ -321,12 +333,13 @@ function 'EvaluationContext.Colour.Hex.AdjustAlpha' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Adjust Hue, Saturation, Luminance and Alpha of a hex color
-/// hexColor			STRING	The hex color to evaluate i.e "#01B8AA"
-/// hueChange			DOUBLE	The hue adjustment in degrees (-360 to 360), 0 for no change
-/// saturationChange	DOUBLE	The saturation adjustment (-1 to 1), 0 for no change
-/// luminanceChange		DOUBLE	The luminance adjustment (-1 to 1), 0 for no change
-/// alphaChange			DOUBLE	The alpha adjustment (-1 to 1), 0 for no change
+/// Adjusts multiple components of a hex color simultaneously
+/// @param {string} hexColor – The hex color to adjust (e.g., "#01B8AA")
+/// @param {int} hueChange – The hue adjustment in degrees (-360 to 360)
+/// @param {decimal} saturationChange – The saturation adjustment (-1 to 1)
+/// @param {decimal} luminanceChange – The luminance adjustment (-1 to 1)
+/// @param {decimal} alphaChange – The alpha adjustment (-1 to 1)
+/// @returns Modified hex color
 function 'EvaluationContext.Colour.Hex.AdjustColour' =
 		(
 			hexColor: STRING,
@@ -347,10 +360,11 @@ function 'EvaluationContext.Colour.Hex.AdjustColour' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Interpolate between two Hex colors by a given percentage
-/// startHexColour	STRING	The starting Hex colour (e.g., "#FF0000")
-/// endHexColour	STRING	The ending Hex colour (e.g., "#0000FF")  
-/// percentage		DOUBLE	The interpolation percentage (0.0 = startColor, 1.0 = endColor)
+/// Interpolates between two hex colors by a given percentage
+/// @param {string} startHexColour – The starting hex color (e.g., "#FF0000")
+/// @param {string} endHexColour – The ending hex color (e.g., "#0000FF")
+/// @param {decimal} percentage – The interpolation percentage (0.0 = start color, 1.0 = end color)
+/// @returns Interpolated hex color
 function 'EvaluationContext.Colour.Hex.Interpolate' = 
 		(
 			startHexColour: STRING,
@@ -394,9 +408,10 @@ function 'EvaluationContext.Colour.Hex.Interpolate' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Select theme colour, wrapping around to the start if variant exceeds available options
-/// themeName	STRING	The theme name e.g. "Office", "Power BI"
-/// variant		INT64	The variant index (1-N, wraps around if exceeds available variants)
+/// Selects a theme color with variant wrapping
+/// @param {string} themeName – The theme name (e.g., "Office", "Power BI")
+/// @param {int} variant – The variant index (1-N, wraps around if exceeds available variants)
+/// @returns Theme color in hex format
 function 'EvaluationContext.Colour.Hex.Theme' =
 		(
 			themeName: STRING,
@@ -553,11 +568,12 @@ function 'EvaluationContext.Colour.Hex.Theme' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Linear gradient of a hex colour
-/// hexColor		STRING	The base hex color e.g. "#01B8AA"
-/// variant			INT64	The variant index (1-N, wraps around if exceeds steps)
-/// steps			INT64	The number of steps in the gradient (minimum = 2)
-/// linearRange		DOUBLE	The range of luminance adjustment for linear theme (e.g. 0.6 for a range of -0.3 to +0.3)
+/// Creates a linear gradient variant of a hex color
+/// @param {string} hexColor – The base hex color (e.g., "#01B8AA")
+/// @param {int} variant – The variant index (1-N, wraps around if exceeds steps)
+/// @param {int} steps – The number of steps in the gradient (minimum = 2)
+/// @param {decimal} linearRange – The range of luminance adjustment
+/// @returns Gradient variant color in hex format
 function 'EvaluationContext.Colour.Hex.LinearTheme' =
 		(
 			hexColor: STRING,
@@ -580,8 +596,9 @@ function 'EvaluationContext.Colour.Hex.LinearTheme' =
 
 	annotation DAXLIB_PackageVersion = __PLACEHOLDER_PACKAGE_VERSION__
 
-/// Select a text color (black or white) based on background hex color for contrast
-/// backgroundHex	STRING	The background hex color to evaluate i.e "#01B8AA"
+/// Determines appropriate text color (black/white) for contrast against background
+/// @param {string} backgroundHex – The background hex color to evaluate (e.g., "#01B8AA")
+/// @returns #000000 for dark text or #FFFFFF for light text
 function 'EvaluationContext.Colour.Hex.TextColour' =
 		(
 			backgroundHex: STRING
