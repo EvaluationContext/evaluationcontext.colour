@@ -1,0 +1,133 @@
+{
+  "functions": [
+    {
+      "name": "EvaluationContext.Colour.Int.ToHex",
+      "short_name": "Int.ToHex",
+      "description": "Int to Hex conversion",
+      "json_file": "EvaluationContext.Colour.Int.ToHex.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.ToInt",
+      "short_name": "Hex.ToInt",
+      "description": "Converts a hexadecimal string to its integer value",
+      "json_file": "EvaluationContext.Colour.Hex.ToInt.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.RGB.ToHex",
+      "short_name": "RGB.ToHex",
+      "description": "Converts RGB color values to hexadecimal format",
+      "json_file": "EvaluationContext.Colour.RGB.ToHex.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.HSL.ToHex",
+      "short_name": "HSL.ToHex",
+      "description": "Converts HSL color values to hexadecimal format",
+      "json_file": "EvaluationContext.Colour.HSL.ToHex.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.Hue",
+      "short_name": "Hex.Hue",
+      "description": "Extracts the hue component from a hex color",
+      "json_file": "EvaluationContext.Colour.Hex.Hue.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.Saturation",
+      "short_name": "Hex.Saturation",
+      "description": "Extracts the saturation component from a hex color",
+      "json_file": "EvaluationContext.Colour.Hex.Saturation.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.Luminance",
+      "short_name": "Hex.Luminance",
+      "description": "Extracts the luminance component from a hex color",
+      "json_file": "EvaluationContext.Colour.Hex.Luminance.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.Alpha",
+      "short_name": "Hex.Alpha",
+      "description": "Extracts the alpha component from a hex color",
+      "json_file": "EvaluationContext.Colour.Hex.Alpha.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.AdjustHue",
+      "short_name": "Hex.AdjustHue",
+      "description": "Adjusts the hue of a hex color",
+      "json_file": "EvaluationContext.Colour.Hex.AdjustHue.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.AdjustSaturation",
+      "short_name": "Hex.AdjustSaturation",
+      "description": "Adjusts the saturation of a hex color",
+      "json_file": "EvaluationContext.Colour.Hex.AdjustSaturation.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.AdjustLuminance",
+      "short_name": "Hex.AdjustLuminance",
+      "description": "Adjusts the luminance of a hex color",
+      "json_file": "EvaluationContext.Colour.Hex.AdjustLuminance.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.AdjustAlpha",
+      "short_name": "Hex.AdjustAlpha",
+      "description": "Adjusts the alpha component of a hex color",
+      "json_file": "EvaluationContext.Colour.Hex.AdjustAlpha.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.AdjustColour",
+      "short_name": "Hex.AdjustColour",
+      "description": "Adjusts multiple components of a hex color simultaneously",
+      "json_file": "EvaluationContext.Colour.Hex.AdjustColour.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.Interpolate",
+      "short_name": "Hex.Interpolate",
+      "description": "Interpolates between two hex colors by a given percentage",
+      "json_file": "EvaluationContext.Colour.Hex.Interpolate.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.Theme",
+      "short_name": "Hex.Theme",
+      "description": "Selects a theme color with variant wrapping",
+      "json_file": "EvaluationContext.Colour.Hex.Theme.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.LinearTheme",
+      "short_name": "Hex.LinearTheme",
+      "description": "Creates a linear gradient variant of a hex color",
+      "json_file": "EvaluationContext.Colour.Hex.LinearTheme.json"
+    },
+    {
+      "name": "EvaluationContext.Colour.Hex.TextColour",
+      "short_name": "Hex.TextColour",
+      "description": "Determines appropriate text color (black/white) for contrast against background",
+      "json_file": "EvaluationContext.Colour.Hex.TextColour.json"
+    }
+  ],
+  "total_count": 17,
+  "categories": {
+    "conversion": [
+      "Int.ToHex",
+      "Hex.ToInt",
+      "RGB.ToHex",
+      "HSL.ToHex"
+    ],
+    "hex_manipulation": [
+      "Hex.ToInt",
+      "Hex.Hue",
+      "Hex.Saturation",
+      "Hex.Luminance",
+      "Hex.Alpha",
+      "Hex.AdjustHue",
+      "Hex.AdjustSaturation",
+      "Hex.AdjustLuminance",
+      "Hex.AdjustAlpha",
+      "Hex.AdjustColour",
+      "Hex.TextColour"
+    ],
+    "themes": [
+      "Hex.Interpolate",
+      "Hex.Theme",
+      "Hex.LinearTheme"
+    ]
+  }
+}

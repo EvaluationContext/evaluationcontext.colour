@@ -10,7 +10,7 @@ Adjusts the saturation of a hex color
 
     | Parameter | Type | Required | Description |
     |:---:|:---:|:---:|---|
-    | hexColor | <span class="type-label string">STRING</span> | :material-check: | The hex color to adjust (e.g., "<span style="color: #01B8AA">■</span> #01B8AA") |
+    | hexColor | <span class="type-label string">STRING</span> | :material-check: | The hex color to adjust (e.g., "#01B8AA") |
     | saturationChange | <span class="type-label number">DOUBLE</span> | :material-check: | The saturation adjustment (-1 to 1) |
 
     <span class="type-label string">STRING</span> Modified hex color
@@ -24,19 +24,19 @@ Adjusts the saturation of a hex color
 === "Definition"
 
     ```dax
-    EvaluationContext.Colour.Hex.AdjustSaturation =
-        (
-            hexColor: STRING,
-            saturationChange: DOUBLE
-        ) =>
-        
-            VAR H = EvaluationContext.Colour.Hex.Hue( hexColor )
-            VAR S = EvaluationContext.Colour.Hex.Saturation( hexColor )
-            VAR L = EvaluationContext.Colour.Hex.Luminance( hexColor )
-            VAR A = EvaluationContext.Colour.Hex.Alpha( hexColor )
-        
-            VAR NewS = MIN( MAX( S + saturationChange, 0 ), 1 )
-        
-            RETURN
-                EvaluationContext.Colour.HSL.ToHex( H, NewS, L, A )
+    function 'EvaluationContext.Colour.Hex.AdjustSaturation' =
+    		(
+    			hexColor: STRING,
+    			saturationChange: DOUBLE
+    		) =>
+    		
+    			VAR H = EvaluationContext.Colour.Hex.Hue( hexColor )
+    			VAR S = EvaluationContext.Colour.Hex.Saturation( hexColor )
+    			VAR L = EvaluationContext.Colour.Hex.Luminance( hexColor )
+    			VAR A = EvaluationContext.Colour.Hex.Alpha( hexColor )
+    		
+    			VAR NewS = MIN( MAX( S + saturationChange, 0 ), 1 )
+    		
+    			RETURN
+    				EvaluationContext.Colour.HSL.ToHex( H, NewS, L, A )
     ```

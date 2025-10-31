@@ -1,0 +1,30 @@
+{
+  "name": "EvaluationContext.Colour.Hex.Hue",
+  "short_name": "Hex.Hue",
+  "description": "Extracts the hue component from a hex color",
+  "parameters": [
+    {
+      "name": "hexColor",
+      "type": "string",
+      "type_label": "<span class=\"type-label string\">STRING</span>",
+      "description": "The hex color to evaluate (e.g., \"#01B8AA\")",
+      "optional": false,
+      "default_value": null
+    }
+  ],
+  "return_type": "INT",
+  "return_type_label": "<span class=\"type-label int64\">INT64</span>",
+  "return_description": "Hue value (0-360)",
+  "code": "function 'EvaluationContext.Colour.Hex.Hue' =\n\t\t(\n\t\t\thexColor: STRING\n\t\t) =>\n\t\t\n\t\t\tVAR CleanHex = IF( LEFT( hexColor, 1) = \"#\", MID(hexColor, 2, 6), MID( hexColor, 1, 6 ) )\n\t\t\tVAR R = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 1, 2 ) )\n\t\t\tVAR G = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 3, 2 ) )\n\t\t\tVAR B = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 5, 2 ) )\n\t\t\n\t\t\tVAR Mx = MAX( MAX( R, G ), B)\n\t\t\tVAR Mn = MIN( MIN( R, G ), B)\n\t\t\tVAR Delta = Mx - Mn\n\t\t\n\t\t\tVAR H =\n\t\t\t\tSWITCH(\n\t\t\t\t\ttrue,\n\t\t\t\t\tDelta = 0, 0,\n\t\t\t\t\tMx = R, MOD( ( G - B ) / Delta, 6),\n\t\t\t\t\tMx = G, ( ( B - R ) / Delta ) + 2,\n\t\t\t\t\tMx = B, ( ( R - G ) / Delta ) + 4\n\t\t\t\t) * 60\n\t\t\n\t\t\tVAR result = ROUND(H, 0)\n\t\t\n\t\t\tRETURN result",
+  "example": "EvaluationContext.Colour.Hex.Hue(\"#FF0000\") // Returns 0",
+  "author": "None",
+  "version": null,
+  "since": null,
+  "see": null,
+  "deprecated": null,
+  "sections": {
+    "syntax": "=== \"Syntax\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.Hue( hexColor )\n    ```\n\n    | Parameter | Type | Required | Description |\n    |:---:|:---:|:---:|---|\n    | hexColor | <span class=\"type-label string\">STRING</span> | :material-check: | The hex color to evaluate (e.g., \"#01B8AA\") |\n\n    <span class=\"type-label int64\">INT64</span> Hue value (0-360)",
+    "example": "=== \"Example\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.Hue(\"#FF0000\") // Returns 0\n    ```",
+    "definition": "=== \"Definition\"\n\n    ```dax\n    function 'EvaluationContext.Colour.Hex.Hue' =\n    \t\t(\n    \t\t\thexColor: STRING\n    \t\t) =>\n    \t\t\n    \t\t\tVAR CleanHex = IF( LEFT( hexColor, 1) = \"#\", MID(hexColor, 2, 6), MID( hexColor, 1, 6 ) )\n    \t\t\tVAR R = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 1, 2 ) )\n    \t\t\tVAR G = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 3, 2 ) )\n    \t\t\tVAR B = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 5, 2 ) )\n    \t\t\n    \t\t\tVAR Mx = MAX( MAX( R, G ), B)\n    \t\t\tVAR Mn = MIN( MIN( R, G ), B)\n    \t\t\tVAR Delta = Mx - Mn\n    \t\t\n    \t\t\tVAR H =\n    \t\t\t\tSWITCH(\n    \t\t\t\t\ttrue,\n    \t\t\t\t\tDelta = 0, 0,\n    \t\t\t\t\tMx = R, MOD( ( G - B ) / Delta, 6),\n    \t\t\t\t\tMx = G, ( ( B - R ) / Delta ) + 2,\n    \t\t\t\t\tMx = B, ( ( R - G ) / Delta ) + 4\n    \t\t\t\t) * 60\n    \t\t\n    \t\t\tVAR result = ROUND(H, 0)\n    \t\t\n    \t\t\tRETURN result\n    ```"
+  }
+}

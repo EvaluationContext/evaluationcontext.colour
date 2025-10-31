@@ -1,0 +1,62 @@
+{
+  "name": "EvaluationContext.Colour.Hex.AdjustColour",
+  "short_name": "Hex.AdjustColour",
+  "description": "Adjusts multiple components of a hex color simultaneously",
+  "parameters": [
+    {
+      "name": "hexColor",
+      "type": "string",
+      "type_label": "<span class=\"type-label string\">STRING</span>",
+      "description": "The hex color to adjust (e.g., \"#01B8AA\")",
+      "optional": false,
+      "default_value": null
+    },
+    {
+      "name": "hueChange",
+      "type": "int",
+      "type_label": "<span class=\"type-label int64\">INT64</span>",
+      "description": "The hue adjustment in degrees (-360 to 360)",
+      "optional": false,
+      "default_value": null
+    },
+    {
+      "name": "saturationChange",
+      "type": "decimal",
+      "type_label": "<span class=\"type-label number\">DOUBLE</span>",
+      "description": "The saturation adjustment (-1 to 1)",
+      "optional": false,
+      "default_value": null
+    },
+    {
+      "name": "luminanceChange",
+      "type": "decimal",
+      "type_label": "<span class=\"type-label number\">DOUBLE</span>",
+      "description": "The luminance adjustment (-1 to 1)",
+      "optional": false,
+      "default_value": null
+    },
+    {
+      "name": "alphaChange",
+      "type": "decimal",
+      "type_label": "<span class=\"type-label number\">DOUBLE</span>",
+      "description": "The alpha adjustment (-1 to 1)",
+      "optional": false,
+      "default_value": null
+    }
+  ],
+  "return_type": "STRING",
+  "return_type_label": "<span class=\"type-label string\">STRING</span>",
+  "return_description": "Modified hex color",
+  "code": "function 'EvaluationContext.Colour.Hex.AdjustColour' =\n\t\t(\n\t\t\thexColor: STRING,\n\t\t\thueChange: INT64,\n\t\t\tsaturationChange: DOUBLE,\n\t\t\tluminanceChange: DOUBLE,\n\t\t\talphaChange: DOUBLE\n\t\t) =>\n\t\t\n\t\t\tVAR Step1 = IF( HueChange = 0, hexColor, EvaluationContext.Colour.Hex.AdjustHue( hexColor, hueChange ) )\n\t\t\tVAR Step2 = IF( saturationChange = 0, Step1, EvaluationContext.Colour.Hex.AdjustSaturation( Step1, saturationChange ) )\n\t\t\tVAR Step3 = IF( luminanceChange = 0, Step2, EvaluationContext.Colour.Hex.AdjustLuminance( Step2, luminanceChange ) )\n\t\t\tVAR Step4 = IF( alphaChange = 0, Step3, EvaluationContext.Colour.Hex.AdjustAlpha( Step3, alphaChange ) )\n\t\t\n\t\t\tRETURN Step4",
+  "example": "EvaluationContext.Colour.Hex.AdjustColour(\"#5E81AC\", 260, -0.1, 0.4, -0.2) // Returns \"#E8EFE766\"",
+  "author": "None",
+  "version": null,
+  "since": null,
+  "see": null,
+  "deprecated": null,
+  "sections": {
+    "syntax": "=== \"Syntax\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.AdjustColour( hexColor, hueChange, saturationChange, luminanceChange, alphaChange )\n    ```\n\n    | Parameter | Type | Required | Description |\n    |:---:|:---:|:---:|---|\n    | hexColor | <span class=\"type-label string\">STRING</span> | :material-check: | The hex color to adjust (e.g., \"#01B8AA\") |\n    | hueChange | <span class=\"type-label int64\">INT64</span> | :material-check: | The hue adjustment in degrees (-360 to 360) |\n    | saturationChange | <span class=\"type-label number\">DOUBLE</span> | :material-check: | The saturation adjustment (-1 to 1) |\n    | luminanceChange | <span class=\"type-label number\">DOUBLE</span> | :material-check: | The luminance adjustment (-1 to 1) |\n    | alphaChange | <span class=\"type-label number\">DOUBLE</span> | :material-check: | The alpha adjustment (-1 to 1) |\n\n    <span class=\"type-label string\">STRING</span> Modified hex color",
+    "example": "=== \"Example\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.AdjustColour(\"#5E81AC\", 260, -0.1, 0.4, -0.2) // Returns \"#E8EFE766\"\n    ```",
+    "definition": "=== \"Definition\"\n\n    ```dax\n    function 'EvaluationContext.Colour.Hex.AdjustColour' =\n    \t\t(\n    \t\t\thexColor: STRING,\n    \t\t\thueChange: INT64,\n    \t\t\tsaturationChange: DOUBLE,\n    \t\t\tluminanceChange: DOUBLE,\n    \t\t\talphaChange: DOUBLE\n    \t\t) =>\n    \t\t\n    \t\t\tVAR Step1 = IF( HueChange = 0, hexColor, EvaluationContext.Colour.Hex.AdjustHue( hexColor, hueChange ) )\n    \t\t\tVAR Step2 = IF( saturationChange = 0, Step1, EvaluationContext.Colour.Hex.AdjustSaturation( Step1, saturationChange ) )\n    \t\t\tVAR Step3 = IF( luminanceChange = 0, Step2, EvaluationContext.Colour.Hex.AdjustLuminance( Step2, luminanceChange ) )\n    \t\t\tVAR Step4 = IF( alphaChange = 0, Step3, EvaluationContext.Colour.Hex.AdjustAlpha( Step3, alphaChange ) )\n    \t\t\n    \t\t\tRETURN Step4\n    ```"
+  }
+}

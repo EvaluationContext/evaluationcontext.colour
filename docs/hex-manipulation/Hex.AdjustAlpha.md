@@ -10,10 +10,10 @@ Adjusts the alpha component of a hex color
 
     | Parameter | Type | Required | Description |
     |:---:|:---:|:---:|---|
-    | hexColor | <span class="type-label string">STRING</span> | :material-check: | The hex color to adjust (e.g., "<span style="color: #01B8AA">■</span> #01B8AA") |
+    | hexColor | <span class="type-label string">STRING</span> | :material-check: | The hex color to adjust (e.g., "#01B8AA") |
     | alphaChange | <span class="type-label number">DOUBLE</span> | :material-check: | The alpha adjustment (-1 to 1) |
 
-    <span class="type-label string">STRING</span> Modified hex colour
+    <span class="type-label string">STRING</span> Modified hex color
 
 === "Example"
 
@@ -24,18 +24,18 @@ Adjusts the alpha component of a hex color
 === "Definition"
 
     ```dax
-    EvaluationContext.Colour.Hex.AdjustAlpha =
-        (
-            hexColor: STRING,
-            alphaChange: DOUBLE
-        ) =>
-        
-            VAR CleanHex = IF( LEFT( hexColor, 1) = "#", MID( hexColor, 2, 6), MID( hexColor, 1, 6 ) )
-            VAR A = EvaluationContext.Colour.Hex.Alpha( hexColor )
-        
-            VAR NewA = EvaluationContext.Colour.Int.ToHex( MIN( MAX( A + alphaChange, 0 ), 1 ) * 255, 2 )
-        
-            VAR result = "#" & CleanHex & NewA
-        
-            RETURN result
+    function 'EvaluationContext.Colour.Hex.AdjustAlpha' =
+    		(
+    			hexColor: STRING,
+    			alphaChange: DOUBLE
+    		) =>
+    		
+    			VAR CleanHex = IF( LEFT( hexColor, 1) = "#", MID( hexColor, 2, 6), MID( hexColor, 1, 6 ) )
+    			VAR A = EvaluationContext.Colour.Hex.Alpha( hexColor )
+    		
+    			VAR NewA = EvaluationContext.Colour.Int.ToHex( MIN( MAX( A + alphaChange, 0 ), 1 ) * 255, 2 )
+    		
+    			VAR result = "#" & CleanHex & NewA
+    		
+    			RETURN result
     ```

@@ -1,0 +1,54 @@
+{
+  "name": "EvaluationContext.Colour.HSL.ToHex",
+  "short_name": "HSL.ToHex",
+  "description": "Converts HSL color values to hexadecimal format",
+  "parameters": [
+    {
+      "name": "h",
+      "type": "int",
+      "type_label": "<span class=\"type-label int64\">INT64</span>",
+      "description": "Hue (0-360)",
+      "optional": false,
+      "default_value": null
+    },
+    {
+      "name": "s",
+      "type": "decimal",
+      "type_label": "<span class=\"type-label number\">DOUBLE</span>",
+      "description": "Saturation (0-1)",
+      "optional": false,
+      "default_value": null
+    },
+    {
+      "name": "l",
+      "type": "decimal",
+      "type_label": "<span class=\"type-label number\">DOUBLE</span>",
+      "description": "Lightness (0-1)",
+      "optional": false,
+      "default_value": null
+    },
+    {
+      "name": "alpha",
+      "type": "decimal",
+      "type_label": "<span class=\"type-label number\">DOUBLE</span>",
+      "description": "The alpha value (0-1)",
+      "optional": true,
+      "default_value": null
+    }
+  ],
+  "return_type": "STRING",
+  "return_type_label": "<span class=\"type-label string\">STRING</span>",
+  "return_description": "Hex color string with optional alpha",
+  "code": "function 'EvaluationContext.Colour.HSL.ToHex' =\n\t\t(\n\t\t\th: INT64,\n\t\t\ts: DOUBLE,\n\t\t\tl: DOUBLE,\n\t\t\talpha: DOUBLE\n\t\t) =>\n\t\t\n\t\t\tVAR C = ( 1 - ABS(2 * l - 1 ) ) * s\n\t\t\tVAR X = C * ( 1 - ABS( MOD( H / 60, 2 ) - 1 ) )\n\t\t\tVAR M = l - C / 2\n\t\t\n\t\t\tVAR RGB1 = SWITCH(\n\t\t\t\ttrue,\n\t\t\t\th < 60, C & \",\" & X & \",0\",\n\t\t\t\th < 120, X & \",\" & C & \",0\",\n\t\t\t\th < 180, \"0,\" & C & \",\" & X,\n\t\t\t\th < 240, \"0,\" & X & \",\" & C,\n\t\t\t\th < 300, X & \",0,\" & C,\n\t\t\t\tC & \",0,\" & X\n\t\t\t)\n\t\t\n\t\t\tVAR RPrime = \t\tVALUE( LEFT( RGB1, SEARCH(\",\", RGB1 ) - 1 ) )\n\t\t\tVAR Remaining = \tRIGHT( RGB1, LEN( RGB1 ) - SEARCH( \",\", RGB1 ) )\n\t\t\tVAR GPrime = \t\tVALUE( LEFT( Remaining, SEARCH( \",\", Remaining ) - 1) )\n\t\t\tVAR BPrime = \t\tVALUE( RIGHT( Remaining, LEN( Remaining ) - SEARCH( \",\", Remaining ) ) )\n\t\t\n\t\t\tVAR FinalR = \t\tROUND( ( RPrime + M) * 255, 0)\n\t\t\tVAR FinalG = \t\tROUND( ( GPrime + M) * 255, 0)\n\t\t\tVAR FinalB = \t\tROUND( ( BPrime + M) * 255, 0)\n\t\t\n\t\t\tVAR result =\n\t\t\t\t\"#\" &\n\t\t\t\tEvaluationContext.Colour.Int.ToHex(FinalR, 2) &\n\t\t\t\tEvaluationContext.Colour.Int.ToHex(FinalG, 2) &\n\t\t\t\tEvaluationContext.Colour.Int.ToHex(FinalB, 2) &\n\t\t\t\tIF( NOT ISBLANK( alpha ), EvaluationContext.Colour.Int.ToHex( alpha * 255, 2 ) )\n\t\t\n\t\t\tRETURN result",
+  "example": "EvaluationContext.Colour.HSL.ToHex(0, 1, 0.5) // Returns \"#FF0000\"",
+  "author": "None",
+  "version": null,
+  "since": null,
+  "see": null,
+  "deprecated": null,
+  "sections": {
+    "syntax": "=== \"Syntax\"\n\n    ```dax\n    EvaluationContext.Colour.HSL.ToHex( h, s, l, alpha )\n    ```\n\n    | Parameter | Type | Required | Description |\n    |:---:|:---:|:---:|---|\n    | h | <span class=\"type-label int64\">INT64</span> | :material-check: | Hue (0-360) |\n    | s | <span class=\"type-label number\">DOUBLE</span> | :material-check: | Saturation (0-1) |\n    | l | <span class=\"type-label number\">DOUBLE</span> | :material-check: | Lightness (0-1) |\n    | alpha | <span class=\"type-label number\">DOUBLE</span> | :material-close: | The alpha value (0-1) |\n\n    <span class=\"type-label string\">STRING</span> Hex color string with optional alpha",
+    "example": "=== \"Example\"\n\n    ```dax\n    EvaluationContext.Colour.HSL.ToHex(0, 1, 0.5) // Returns \"#FF0000\"\n    ```",
+    "definition": "=== \"Definition\"\n\n    ```dax\n    function 'EvaluationContext.Colour.HSL.ToHex' =\n    \t\t(\n    \t\t\th: INT64,\n    \t\t\ts: DOUBLE,\n    \t\t\tl: DOUBLE,\n    \t\t\talpha: DOUBLE\n    \t\t) =>\n    \t\t\n    \t\t\tVAR C = ( 1 - ABS(2 * l - 1 ) ) * s\n    \t\t\tVAR X = C * ( 1 - ABS( MOD( H / 60, 2 ) - 1 ) )\n    \t\t\tVAR M = l - C / 2\n    \t\t\n    \t\t\tVAR RGB1 = SWITCH(\n    \t\t\t\ttrue,\n    \t\t\t\th < 60, C & \",\" & X & \",0\",\n    \t\t\t\th < 120, X & \",\" & C & \",0\",\n    \t\t\t\th < 180, \"0,\" & C & \",\" & X,\n    \t\t\t\th < 240, \"0,\" & X & \",\" & C,\n    \t\t\t\th < 300, X & \",0,\" & C,\n    \t\t\t\tC & \",0,\" & X\n    \t\t\t)\n    \t\t\n    \t\t\tVAR RPrime = \t\tVALUE( LEFT( RGB1, SEARCH(\",\", RGB1 ) - 1 ) )\n    \t\t\tVAR Remaining = \tRIGHT( RGB1, LEN( RGB1 ) - SEARCH( \",\", RGB1 ) )\n    \t\t\tVAR GPrime = \t\tVALUE( LEFT( Remaining, SEARCH( \",\", Remaining ) - 1) )\n    \t\t\tVAR BPrime = \t\tVALUE( RIGHT( Remaining, LEN( Remaining ) - SEARCH( \",\", Remaining ) ) )\n    \t\t\n    \t\t\tVAR FinalR = \t\tROUND( ( RPrime + M) * 255, 0)\n    \t\t\tVAR FinalG = \t\tROUND( ( GPrime + M) * 255, 0)\n    \t\t\tVAR FinalB = \t\tROUND( ( BPrime + M) * 255, 0)\n    \t\t\n    \t\t\tVAR result =\n    \t\t\t\t\"#\" &\n    \t\t\t\tEvaluationContext.Colour.Int.ToHex(FinalR, 2) &\n    \t\t\t\tEvaluationContext.Colour.Int.ToHex(FinalG, 2) &\n    \t\t\t\tEvaluationContext.Colour.Int.ToHex(FinalB, 2) &\n    \t\t\t\tIF( NOT ISBLANK( alpha ), EvaluationContext.Colour.Int.ToHex( alpha * 255, 2 ) )\n    \t\t\n    \t\t\tRETURN result\n    ```"
+  }
+}

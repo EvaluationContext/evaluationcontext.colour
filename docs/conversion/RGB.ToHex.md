@@ -21,23 +21,22 @@ Converts RGB color values to hexadecimal format
 
     ```dax
     EvaluationContext.Colour.RGB.ToHex(255, 0, 0) // Returns "#FF0000"
-    EvaluationContext.Colour.RGB.ToHex(255, 0, 0, 0.5) // Returns "#FF000080"
     ```
 
 === "Definition"
 
     ```dax
-    EvaluationContext.Colour.RGB.ToHex =
-        (
-            red: INT64,
-            green: INT64,
-            blue: INT64,
-            alpha: DOUBLE
-        ) =>
-
-            "#" &
-            EvaluationContext.Colour.Int.ToHex( red, 2 ) &
-            EvaluationContext.Colour.Int.ToHex( green, 2 ) &
-            EvaluationContext.Colour.Int.ToHex( blue, 2 ) &
-            IF( NOT ISBLANK( alpha ), EvaluationContext.Colour.Int.ToHex( alpha * 255, 2 ) )
+    function 'EvaluationContext.Colour.RGB.ToHex' =
+    		(
+    			red: INT64,
+    			green: INT64,
+    			blue: INT64,
+    			alpha: DOUBLE
+    		) =>
+    		
+    			"#" &
+    			EvaluationContext.Colour.Int.ToHex( red, 2 ) &
+    			EvaluationContext.Colour.Int.ToHex( green, 2 ) &
+    			EvaluationContext.Colour.Int.ToHex( blue, 2 ) &
+    			IF( NOT ISBLANK( alpha ), EvaluationContext.Colour.Int.ToHex( alpha * 255, 2 ) )
     ```

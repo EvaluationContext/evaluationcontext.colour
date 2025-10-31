@@ -10,7 +10,7 @@ Extracts the alpha component from a hex color
 
     | Parameter | Type | Required | Description |
     |:---:|:---:|:---:|---|
-    | hexColor | <span class="type-label string">STRING</span> | :material-check: | The hex color to evaluate (e.g., "<span style="color: #01B8AA">■</span> #01B8AA") |
+    | hexColor | <span class="type-label string">STRING</span> | :material-check: | The hex color to evaluate (e.g., "#01B8AA") |
 
     <span class="type-label number">DOUBLE</span> Alpha value (0-1)
 
@@ -23,15 +23,15 @@ Extracts the alpha component from a hex color
 === "Definition"
 
     ```dax
-    EvaluationContext.Colour.Hex.Alpha =
-        (
-            hexColor: STRING
-        ) =>
-        
-            VAR CleanHex = IF( LEFT( hexColor, 1) = "#", MID( hexColor, 2, 8), MID( hexColor, 1, 8 ) )
-            VAR AlphaHex = IF( LEN( CleanHex ) = 8, MID( CleanHex, 7, 2 ), "FF" )
-            VAR Alpha = EvaluationContext.Colour.Hex.ToInt( AlphaHex )
-            VAR result = ROUND( Alpha / 255, 4 )
-        
-            RETURN result
+    function 'EvaluationContext.Colour.Hex.Alpha' =
+    		(
+    			hexColor: STRING
+    		) =>
+    		
+    			VAR CleanHex = IF( LEFT( hexColor, 1) = "#", MID( hexColor, 2, 8), MID( hexColor, 1, 8 ) )
+    			VAR AlphaHex = IF( LEN( CleanHex ) = 8, MID( CleanHex, 7, 2 ), "FF" )
+    			VAR Alpha = EvaluationContext.Colour.Hex.ToInt( AlphaHex )
+    			VAR result = ROUND( Alpha / 255, 4 )
+    		
+    			RETURN result
     ```

@@ -1,0 +1,32 @@
+# Documentation Generation Configuration
+
+# REQUIRED: Source TMDL file (relative to repository root)
+source: src/lib/functions.tmdl
+
+# REQUIRED: Destination directory (relative to repository root)
+destination: docs
+
+# OPTIONAL: Jinja template file (relative to repository root)
+template: JSdoc/doc_template.md.jinja
+
+# OPTIONAL: Output directory for JSON metadata (relative to JSdoc folder)
+output_dir: parsed_functions
+
+path_mapping:
+  # Pattern matching: map patterns to subfolders
+  # Use | to separate multiple patterns for the same folder
+  pattern_match:
+    "ToHex|ToInt": conversion
+    "Theme|Interpolate|LinearTheme": themes
+    "Hex.": hex-manipulation
+  
+  # Exact function name to path mapping (overrides pattern matching)
+  # Use relative paths from destination directory or absolute paths
+  function_paths:
+    "Hex.Theme": themes
+    "Hex.Interpolate": themes
+    "Hex.LinearTheme": themes
+    "RGB.ToHex": conversion
+    "HSL.ToHex": conversion
+    "Int.ToHex": conversion
+    "Hex.ToInt": conversion

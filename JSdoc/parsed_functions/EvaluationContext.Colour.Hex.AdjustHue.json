@@ -1,0 +1,38 @@
+{
+  "name": "EvaluationContext.Colour.Hex.AdjustHue",
+  "short_name": "Hex.AdjustHue",
+  "description": "Adjusts the hue of a hex color",
+  "parameters": [
+    {
+      "name": "hexColor",
+      "type": "string",
+      "type_label": "<span class=\"type-label string\">STRING</span>",
+      "description": "The hex color to adjust (e.g., \"#01B8AA\")",
+      "optional": false,
+      "default_value": null
+    },
+    {
+      "name": "hueChange",
+      "type": "decimal",
+      "type_label": "<span class=\"type-label number\">DOUBLE</span>",
+      "description": "The hue adjustment in degrees (-360 to 360)",
+      "optional": false,
+      "default_value": null
+    }
+  ],
+  "return_type": "STRING",
+  "return_type_label": "<span class=\"type-label string\">STRING</span>",
+  "return_description": "Modified hex color",
+  "code": "function 'EvaluationContext.Colour.Hex.AdjustHue' =\n\t\t(\n\t\t\thexColor: STRING,\n\t\t\thueChange: DOUBLE\n\t\t) =>\n\t\t\n\t\t\tVAR H = EvaluationContext.Colour.Hex.Hue( hexColor )\n\t\t\tVAR S = EvaluationContext.Colour.Hex.Saturation( hexColor )\n\t\t\tVAR L = EvaluationContext.Colour.Hex.Luminance( hexColor )\n\t\t\tVAR A = EvaluationContext.Colour.Hex.Alpha( hexColor )\n\t\t\n\t\t\tVAR NewH = MOD( H + hueChange + 360, 360 )  // Wrap around 0-360\n\t\t\n\t\t\tRETURN\n\t\t\t\tEvaluationContext.Colour.HSL.ToHex( NewH, S, L, A )",
+  "example": "EvaluationContext.Colour.Hex.AdjustHue(\"#5E81AC\", 260) // Returns \"#67AC5E99\"",
+  "author": "None",
+  "version": null,
+  "since": null,
+  "see": null,
+  "deprecated": null,
+  "sections": {
+    "syntax": "=== \"Syntax\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.AdjustHue( hexColor, hueChange )\n    ```\n\n    | Parameter | Type | Required | Description |\n    |:---:|:---:|:---:|---|\n    | hexColor | <span class=\"type-label string\">STRING</span> | :material-check: | The hex color to adjust (e.g., \"#01B8AA\") |\n    | hueChange | <span class=\"type-label number\">DOUBLE</span> | :material-check: | The hue adjustment in degrees (-360 to 360) |\n\n    <span class=\"type-label string\">STRING</span> Modified hex color",
+    "example": "=== \"Example\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.AdjustHue(\"#5E81AC\", 260) // Returns \"#67AC5E99\"\n    ```",
+    "definition": "=== \"Definition\"\n\n    ```dax\n    function 'EvaluationContext.Colour.Hex.AdjustHue' =\n    \t\t(\n    \t\t\thexColor: STRING,\n    \t\t\thueChange: DOUBLE\n    \t\t) =>\n    \t\t\n    \t\t\tVAR H = EvaluationContext.Colour.Hex.Hue( hexColor )\n    \t\t\tVAR S = EvaluationContext.Colour.Hex.Saturation( hexColor )\n    \t\t\tVAR L = EvaluationContext.Colour.Hex.Luminance( hexColor )\n    \t\t\tVAR A = EvaluationContext.Colour.Hex.Alpha( hexColor )\n    \t\t\n    \t\t\tVAR NewH = MOD( H + hueChange + 360, 360 )  // Wrap around 0-360\n    \t\t\n    \t\t\tRETURN\n    \t\t\t\tEvaluationContext.Colour.HSL.ToHex( NewH, S, L, A )\n    ```"
+  }
+}
