@@ -17,10 +17,12 @@ Converts RGB color values to hexadecimal format
 
     <span class="type-label string">STRING</span> Hex color string with optional alpha
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.RGB.ToHex(255, 0, 0) // Returns "#FF0000"
+    
+    EvaluationContext.Colour.RGB.ToHex(255, 0, 0, 0.5) // Returns "#FF000080"
     ```
 
 === "Definition"

@@ -18,7 +18,7 @@ Adjusts multiple components of a hex color simultaneously
 
     <span class="type-label string">STRING</span> Modified hex color
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.AdjustColour("#5E81AC", 260, -0.1, 0.4, -0.2) // Returns "#E8EFE766"

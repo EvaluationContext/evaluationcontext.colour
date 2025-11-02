@@ -15,10 +15,10 @@ Int to Hex conversion
 
     <span class="type-label string">STRING</span> Hex string of the integer value
 
-=== "Example"
+=== "Examples"
 
     ```dax
-    EvaluationContext.Colour.Int.ToHex(220, 2) // Returns DC
+    EvaluationContext.Colour.Int.ToHex(220, 2) // Returns "DC"
     ```
 
 === "Definition"

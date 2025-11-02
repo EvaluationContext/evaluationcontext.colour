@@ -14,7 +14,7 @@ Converts a hexadecimal string to its integer value
 
     <span class="type-label int64">INT64</span> Integer value of the hex string
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.ToInt("FF") // Returns 255

@@ -40,15 +40,15 @@
   "return_type_label": "<span class=\"type-label string\">STRING</span>",
   "return_description": "Gradient variant color in hex format",
   "code": "function 'EvaluationContext.Colour.Hex.LinearTheme' =\n\t\t(\n\t\t\thexColor: STRING,\n\t\t\tvariant: INT64,\n\t\t\tsteps: INT64,\n\t\t\tlinearRange: DOUBLE\n\t\t) =>\n\t\t\n\t\t\tVAR StepSize = linearRange / ( steps - 1 )\n\t\t\tVAR AdjustedVariant = MOD( variant - 1, steps ) + 1\n\t\t\tVAR Hex =\n\t\t\t\tEvaluationContext.Colour.Hex.AdjustLuminance(\n\t\t\t\t\thexColor,\n\t\t\t\t\t( (AdjustedVariant - 1) * StepSize ) - ( linearRange / 2 )\n\t\t\t\t)\n\t\t\n\t\t\tRETURN Hex",
-  "example": "EvaluationContext.Colour.Hex.LinearTheme(\"#118DFF\", 2, 7, 0.5) // Returns \"#0061BBFF\"",
-  "author": "None",
+  "example": null,
+  "author": null,
   "version": null,
   "since": null,
   "see": null,
   "deprecated": null,
   "sections": {
     "syntax": "=== \"Syntax\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.LinearTheme( hexColor, variant, steps, linearRange )\n    ```\n\n    | Parameter | Type | Required | Description |\n    |:---:|:---:|:---:|---|\n    | hexColor | <span class=\"type-label string\">STRING</span> | :material-check: | The base hex color (e.g., \"#01B8AA\") |\n    | variant | <span class=\"type-label int64\">INT64</span> | :material-check: | The variant index (1-N, wraps around if exceeds steps) |\n    | steps | <span class=\"type-label int64\">INT64</span> | :material-check: | The number of steps in the gradient (minimum = 2) |\n    | linearRange | <span class=\"type-label number\">DOUBLE</span> | :material-check: | The range of luminance adjustment |\n\n    <span class=\"type-label string\">STRING</span> Gradient variant color in hex format",
-    "example": "=== \"Example\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.LinearTheme(\"#118DFF\", 2, 7, 0.5) // Returns \"#0061BBFF\"\n    ```",
+    "example": "",
     "definition": "=== \"Definition\"\n\n    ```dax\n    function 'EvaluationContext.Colour.Hex.LinearTheme' =\n    \t\t(\n    \t\t\thexColor: STRING,\n    \t\t\tvariant: INT64,\n    \t\t\tsteps: INT64,\n    \t\t\tlinearRange: DOUBLE\n    \t\t) =>\n    \t\t\n    \t\t\tVAR StepSize = linearRange / ( steps - 1 )\n    \t\t\tVAR AdjustedVariant = MOD( variant - 1, steps ) + 1\n    \t\t\tVAR Hex =\n    \t\t\t\tEvaluationContext.Colour.Hex.AdjustLuminance(\n    \t\t\t\t\thexColor,\n    \t\t\t\t\t( (AdjustedVariant - 1) * StepSize ) - ( linearRange / 2 )\n    \t\t\t\t)\n    \t\t\n    \t\t\tRETURN Hex\n    ```"
   }
 }

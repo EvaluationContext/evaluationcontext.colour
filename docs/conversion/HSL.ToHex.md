@@ -17,7 +17,7 @@ Converts HSL color values to hexadecimal format
 
     <span class="type-label string">STRING</span> Hex color string with optional alpha
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.HSL.ToHex(0, 1, 0.5) // Returns "#FF0000"

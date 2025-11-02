@@ -14,7 +14,7 @@ Extracts the saturation component from a hex color
 
     <span class="type-label number">DOUBLE</span> Saturation value (0-1)
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.Saturation("#5E81AC") // Returns 0.32

@@ -14,7 +14,7 @@ Extracts the hue component from a hex color
 
     <span class="type-label int64">INT64</span> Hue value (0-360)
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.Hue("#FF0000") // Returns 0

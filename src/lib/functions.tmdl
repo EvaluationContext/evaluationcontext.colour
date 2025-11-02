@@ -2,7 +2,6 @@
 /// @param {int} number – The integer to convert
 /// @param {int} [padTo] – Minimum number of characters in result
 /// @returns {string} Hex string of the integer value
-/// @example EvaluationContext.Colour.Int.ToHex(220, 2) // Returns DC
 function 'EvaluationContext.Colour.Int.ToHex' =
 		(
 			number: INT64,
@@ -32,7 +31,6 @@ function 'EvaluationContext.Colour.Int.ToHex' =
 /// Converts a hexadecimal string to its integer value
 /// @param {string} hex – The hex value to convert (e.g., "1A")
 /// @returns {int} Integer value of the hex string
-/// @example EvaluationContext.Colour.Hex.ToInt("FF") // Returns 255
 function 'EvaluationContext.Colour.Hex.ToInt' =
 		(
 			hex: STRING
@@ -61,7 +59,6 @@ function 'EvaluationContext.Colour.Hex.ToInt' =
 /// @param {int} blue – The blue value (0-255)
 /// @param {decimal} [alpha] – The alpha value (0-1)
 /// @returns {string} Hex color string with optional alpha
-/// @example EvaluationContext.Colour.RGB.ToHex(255, 0, 0) // Returns "#FF0000"
 function 'EvaluationContext.Colour.RGB.ToHex' =
 		(
 			red: INT64,
@@ -86,7 +83,6 @@ function 'EvaluationContext.Colour.RGB.ToHex' =
 /// @param {decimal} l – Lightness (0-1)
 /// @param {decimal} [alpha] – The alpha value (0-1)
 /// @returns {string} Hex color string with optional alpha
-/// @example EvaluationContext.Colour.HSL.ToHex(0, 1, 0.5) // Returns "#FF0000"
 function 'EvaluationContext.Colour.HSL.ToHex' =
 		(
 			h: INT64,
@@ -134,7 +130,6 @@ function 'EvaluationContext.Colour.HSL.ToHex' =
 /// Extracts the hue component from a hex color
 /// @param {string} hexColor – The hex color to evaluate (e.g., "#01B8AA")
 /// @returns {int} Hue value (0-360)
-/// @example EvaluationContext.Colour.Hex.Hue("#FF0000") // Returns 0
 function 'EvaluationContext.Colour.Hex.Hue' =
 		(
 			hexColor: STRING
@@ -169,7 +164,6 @@ function 'EvaluationContext.Colour.Hex.Hue' =
 /// Extracts the saturation component from a hex color
 /// @param {string} hexColor – The hex color to evaluate (e.g., "#01B8AA")
 /// @returns {double} Saturation value (0-1)
-/// @example EvaluationContext.Colour.Hex.Saturation("#5E81AC") // Returns 0.32
 function 'EvaluationContext.Colour.Hex.Saturation' =
 		(
 			hexColor: STRING
@@ -202,7 +196,6 @@ function 'EvaluationContext.Colour.Hex.Saturation' =
 /// Extracts the luminance component from a hex color
 /// @param {string} hexColor – The hex color to evaluate (e.g., "#01B8AA")
 /// @returns {double} Luminance value (0-1)
-/// @example EvaluationContext.Colour.Hex.Luminance( "#5E81AC") // Returns 0.52
 function 'EvaluationContext.Colour.Hex.Luminance' =
 		(
 			hexColor: STRING
@@ -229,7 +222,6 @@ function 'EvaluationContext.Colour.Hex.Luminance' =
 /// Extracts the alpha component from a hex color
 /// @param {string} hexColor – The hex color to evaluate (e.g., "#01B8AA")
 /// @returns {double} Alpha value (0-1)
-/// @example EvaluationContext.Colour.Hex.Alpha("#5E81AC") // Returns 0.6
 function 'EvaluationContext.Colour.Hex.Alpha' =
 		(
 			hexColor: STRING
@@ -250,7 +242,6 @@ function 'EvaluationContext.Colour.Hex.Alpha' =
 /// @param {string} hexColor – The hex color to adjust (e.g., "#01B8AA")
 /// @param {decimal} hueChange – The hue adjustment in degrees (-360 to 360)
 /// @returns {string} Modified hex color
-/// @example EvaluationContext.Colour.Hex.AdjustHue("#5E81AC", 260) // Returns "#67AC5E99"
 function 'EvaluationContext.Colour.Hex.AdjustHue' =
 		(
 			hexColor: STRING,
@@ -275,7 +266,6 @@ function 'EvaluationContext.Colour.Hex.AdjustHue' =
 /// @param {string} hexColor – The hex color to adjust (e.g., "#01B8AA")
 /// @param {decimal} saturationChange – The saturation adjustment (-1 to 1)
 /// @returns {string} Modified hex color
-/// @example EvaluationContext.Colour.Hex.AdjustSaturation("#5E81AC", -0.1) // Returns "#6A82A099"
 function 'EvaluationContext.Colour.Hex.AdjustSaturation' =
 		(
 			hexColor: STRING,
@@ -300,7 +290,6 @@ function 'EvaluationContext.Colour.Hex.AdjustSaturation' =
 /// @param {string} hexColor – The hex color to adjust (e.g., "#01B8AA")
 /// @param {decimal} luminanceChange – The luminance adjustment (-1 to 1)
 /// @returns {string} Modified hex color
-/// @example EvaluationContext.Colour.Hex.AdjustLuminance("#5E81AC", 0.4) // Returns "#E5EAF199"
 function 'EvaluationContext.Colour.Hex.AdjustLuminance' =
 		(
 			hexColor: STRING,
@@ -325,7 +314,6 @@ function 'EvaluationContext.Colour.Hex.AdjustLuminance' =
 /// @param {string} hexColor – The hex color to adjust (e.g., "#01B8AA")
 /// @param {decimal} alphaChange – The alpha adjustment (-1 to 1)
 /// @returns {string} Modified hex color
-/// @example EvaluationContext.Colour.Hex.AdjustAlpha("#5E81AC", -2.0) // Returns "#5E81AC66"
 function 'EvaluationContext.Colour.Hex.AdjustAlpha' =
 		(
 			hexColor: STRING,
@@ -352,7 +340,6 @@ function 'EvaluationContext.Colour.Hex.AdjustAlpha' =
 /// @param {decimal} luminanceChange – The luminance adjustment (-1 to 1)
 /// @param {decimal} alphaChange – The alpha adjustment (-1 to 1)
 /// @returns {string} Modified hex color
-/// @example EvaluationContext.Colour.Hex.AdjustColour("#5E81AC", 260, -0.1, 0.4, -0.2) // Returns "#E8EFE766"
 function 'EvaluationContext.Colour.Hex.AdjustColour' =
 		(
 			hexColor: STRING,
@@ -378,7 +365,6 @@ function 'EvaluationContext.Colour.Hex.AdjustColour' =
 /// @param {string} endHexColour – The ending hex color (e.g., "#0000FF")
 /// @param {decimal} percentage – The interpolation percentage (0.0 = start color, 1.0 = end color)
 /// @returns {string} Interpolated hex color
-/// @example EvaluationContext.Colour.Hex.Interpolate("#FF0000", "#0000FF", 0.5) // Returns "#800080"
 function 'EvaluationContext.Colour.Hex.Interpolate' = 
 		(
 			startHexColour: STRING,
@@ -426,7 +412,6 @@ function 'EvaluationContext.Colour.Hex.Interpolate' =
 /// @param {string} themeName – The theme name (e.g., "Office", "Power BI")
 /// @param {int} variant – The variant index (1-N, wraps around if exceeds available variants)
 /// @returns {string} Theme color in hex format
-/// @example EvaluationContext.Colour.Hex.Theme("Power BI", 2) // Returns "#12239E"
 function 'EvaluationContext.Colour.Hex.Theme' =
 		(
 			themeName: STRING,
@@ -589,7 +574,6 @@ function 'EvaluationContext.Colour.Hex.Theme' =
 /// @param {int} steps – The number of steps in the gradient (minimum = 2)
 /// @param {decimal} linearRange – The range of luminance adjustment
 /// @returns {string} Gradient variant color in hex format
-/// @example EvaluationContext.Colour.Hex.LinearTheme("#118DFF", 2, 7, 0.5) // Returns "#0061BBFF"
 function 'EvaluationContext.Colour.Hex.LinearTheme' =
 		(
 			hexColor: STRING,
@@ -615,7 +599,6 @@ function 'EvaluationContext.Colour.Hex.LinearTheme' =
 /// Determines appropriate text color (black/white) for contrast against background
 /// @param {string} backgroundHex – The background hex color to evaluate (e.g., "#01B8AA")
 /// @returns {string} #000000 for dark text or #FFFFFF for light text
-/// @example EvaluationContext.Colour.Hex.TextColour( backgroundHex )
 function 'EvaluationContext.Colour.Hex.TextColour' =
 		(
 			backgroundHex: STRING

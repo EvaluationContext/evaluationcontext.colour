@@ -1,4 +1,8 @@
-## 0.1.3-beta (Latest)
+## 0.1.4-beta (Latest)
+
+:octicons-sparkles-fill-16: JSDoc comments
+
+## 0.1.3-beta
 
 :octicons-sparkles-fill-16: Transition from Small DAX Lib library to Medium/Large library
 

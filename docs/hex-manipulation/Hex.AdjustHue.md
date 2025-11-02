@@ -15,7 +15,7 @@ Adjusts the hue of a hex color
 
     <span class="type-label string">STRING</span> Modified hex color
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.AdjustHue("#5E81AC", 260) // Returns "#67AC5E99"

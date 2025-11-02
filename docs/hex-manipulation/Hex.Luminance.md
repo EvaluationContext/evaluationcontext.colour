@@ -14,10 +14,10 @@ Extracts the luminance component from a hex color
 
     <span class="type-label number">DOUBLE</span> Luminance value (0-1)
 
-=== "Example"
+=== "Examples"
 
     ```dax
-    EvaluationContext.Colour.Hex.Luminance( "#5E81AC") // Returns 0.52
+    EvaluationContext.Colour.Hex.Luminance("#5E81AC") // Returns 0.52
     ```
 
 === "Definition"

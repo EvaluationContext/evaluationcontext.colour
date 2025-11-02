@@ -185,8 +185,8 @@ def parse_tmdl_functions(tmdl_path: Path) -> List[FunctionMetadata]:
             
             code = f"function '{function_name}' =\n{clean_body}"
         
-            # Generate example (use custom example if provided, otherwise auto-generate)
-            example = custom_example if custom_example else generate_example(function_name, parameters)
+            # Only use custom example if provided (no auto-generation)
+            example = custom_example
         
             functions.append(FunctionMetadata(
                 name=function_name,
@@ -309,8 +309,12 @@ def create_example_section(func: FunctionMetadata) -> str:
         func: Function metadata
         
     Returns:
-        Markdown string for example section
+        Markdown string for example section, or empty string if no example exists
     """
+    # Only generate example section if an example exists
+    if not func.example:
+        return ""
+    
     lines = ['=== "Example"', '', '    ```dax']
     lines.append(f'    {func.example}')
     lines.append('    ```')

@@ -16,15 +16,15 @@
   "return_type_label": "<span class=\"type-label string\">STRING</span>",
   "return_description": "#000000 for dark text or #FFFFFF for light text",
   "code": "function 'EvaluationContext.Colour.Hex.TextColour' =\n\t\t(\n\t\t\tbackgroundHex: STRING\n\t\t) =>\n\t\t\n\t\t\tVAR L = EvaluationContext.Colour.Hex.Luminance( backgroundHex )\n\t\t\tVAR result = IF( L > 0.5, \"#000000\", \"#FFFFFF\")\n\t\t\n\t\t\tRETURN result",
-  "example": "EvaluationContext.Colour.Hex.TextColour( backgroundHex )",
-  "author": "None",
+  "example": null,
+  "author": null,
   "version": null,
   "since": null,
   "see": null,
   "deprecated": null,
   "sections": {
     "syntax": "=== \"Syntax\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.TextColour( backgroundHex )\n    ```\n\n    | Parameter | Type | Required | Description |\n    |:---:|:---:|:---:|---|\n    | backgroundHex | <span class=\"type-label string\">STRING</span> | :material-check: | The background hex color to evaluate (e.g., \"#01B8AA\") |\n\n    <span class=\"type-label string\">STRING</span> #000000 for dark text or #FFFFFF for light text",
-    "example": "=== \"Example\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.TextColour( backgroundHex )\n    ```",
+    "example": "",
     "definition": "=== \"Definition\"\n\n    ```dax\n    function 'EvaluationContext.Colour.Hex.TextColour' =\n    \t\t(\n    \t\t\tbackgroundHex: STRING\n    \t\t) =>\n    \t\t\n    \t\t\tVAR L = EvaluationContext.Colour.Hex.Luminance( backgroundHex )\n    \t\t\tVAR result = IF( L > 0.5, \"#000000\", \"#FFFFFF\")\n    \t\t\n    \t\t\tRETURN result\n    ```"
   }
 }

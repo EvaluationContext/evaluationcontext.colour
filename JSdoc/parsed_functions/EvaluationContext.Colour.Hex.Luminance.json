@@ -16,15 +16,15 @@
   "return_type_label": "<span class=\"type-label number\">DOUBLE</span>",
   "return_description": "Luminance value (0-1)",
   "code": "function 'EvaluationContext.Colour.Hex.Luminance' =\n\t\t(\n\t\t\thexColor: STRING\n\t\t) =>\n\t\t\n\t\t\tVAR CleanHex = IF( LEFT( hexColor, 1) = \"#\", MID( hexColor, 2, 6), MID( hexColor, 1, 6 ) )\n\t\t\tVAR R = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 1, 2 ) )\n\t\t\tVAR G = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 3, 2 ) )\n\t\t\tVAR B = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 5, 2 ) )\n\t\t\n\t\t\tVAR Mx = MAX( MAX( R, G ), B)\n\t\t\tVAR Mn = MIN( MIN( R, G ), B)\n\t\t\tVAR Delta = Mx - Mn\n\t\t\n\t\t\tVAR L = ( Mx + Mn ) / 2\n\t\t\tVAR result = ROUND( L, 4 ) / 255\n\t\t\n\t\t\tRETURN result",
-  "example": "EvaluationContext.Colour.Hex.Luminance( \"#5E81AC\") // Returns 0.52",
-  "author": "None",
+  "example": null,
+  "author": null,
   "version": null,
   "since": null,
   "see": null,
   "deprecated": null,
   "sections": {
     "syntax": "=== \"Syntax\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.Luminance( hexColor )\n    ```\n\n    | Parameter | Type | Required | Description |\n    |:---:|:---:|:---:|---|\n    | hexColor | <span class=\"type-label string\">STRING</span> | :material-check: | The hex color to evaluate (e.g., \"#01B8AA\") |\n\n    <span class=\"type-label number\">DOUBLE</span> Luminance value (0-1)",
-    "example": "=== \"Example\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.Luminance( \"#5E81AC\") // Returns 0.52\n    ```",
+    "example": "",
     "definition": "=== \"Definition\"\n\n    ```dax\n    function 'EvaluationContext.Colour.Hex.Luminance' =\n    \t\t(\n    \t\t\thexColor: STRING\n    \t\t) =>\n    \t\t\n    \t\t\tVAR CleanHex = IF( LEFT( hexColor, 1) = \"#\", MID( hexColor, 2, 6), MID( hexColor, 1, 6 ) )\n    \t\t\tVAR R = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 1, 2 ) )\n    \t\t\tVAR G = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 3, 2 ) )\n    \t\t\tVAR B = EvaluationContext.Colour.Hex.ToInt( MID( CleanHex, 5, 2 ) )\n    \t\t\n    \t\t\tVAR Mx = MAX( MAX( R, G ), B)\n    \t\t\tVAR Mn = MIN( MIN( R, G ), B)\n    \t\t\tVAR Delta = Mx - Mn\n    \t\t\n    \t\t\tVAR L = ( Mx + Mn ) / 2\n    \t\t\tVAR result = ROUND( L, 4 ) / 255\n    \t\t\n    \t\t\tRETURN result\n    ```"
   }
 }

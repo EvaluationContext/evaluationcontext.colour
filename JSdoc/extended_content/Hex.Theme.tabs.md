@@ -1,3 +1,9 @@
+=== "Example"
+
+    ```dax
+    EvaluationContext.Colour.Hex.Theme("Power BI", 2) // Returns "#12239E"
+    ```
+
 === "Themes"
 
     | Variant | Power BI | Modern Corporate | Ocean Breeze | Sunset Vibes | Forest Green | Purple Rain | Monochrome | Vibrant Tech | Earth Tones | Pastel Dreams | Midnight Blue |

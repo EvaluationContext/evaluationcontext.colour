@@ -16,7 +16,7 @@ Interpolates between two hex colors by a given percentage
 
     <span class="type-label string">STRING</span> Interpolated hex color
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.Interpolate("#FF0000", "#0000FF", 0.5) // Returns "#800080"

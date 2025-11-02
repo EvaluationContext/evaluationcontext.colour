@@ -15,7 +15,7 @@ Adjusts the saturation of a hex color
 
     <span class="type-label string">STRING</span> Modified hex color
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.AdjustSaturation("#5E81AC", -0.1) // Returns "#6A82A099"

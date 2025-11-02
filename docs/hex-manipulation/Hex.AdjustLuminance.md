@@ -15,7 +15,7 @@ Adjusts the luminance of a hex color
 
     <span class="type-label string">STRING</span> Modified hex color
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.AdjustLuminance("#5E81AC", 0.4) // Returns "#E5EAF199"

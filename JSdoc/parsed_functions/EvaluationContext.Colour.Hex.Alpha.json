@@ -16,15 +16,15 @@
   "return_type_label": "<span class=\"type-label number\">DOUBLE</span>",
   "return_description": "Alpha value (0-1)",
   "code": "function 'EvaluationContext.Colour.Hex.Alpha' =\n\t\t(\n\t\t\thexColor: STRING\n\t\t) =>\n\t\t\n\t\t\tVAR CleanHex = IF( LEFT( hexColor, 1) = \"#\", MID( hexColor, 2, 8), MID( hexColor, 1, 8 ) )\n\t\t\tVAR AlphaHex = IF( LEN( CleanHex ) = 8, MID( CleanHex, 7, 2 ), \"FF\" )\n\t\t\tVAR Alpha = EvaluationContext.Colour.Hex.ToInt( AlphaHex )\n\t\t\tVAR result = ROUND( Alpha / 255, 4 )\n\t\t\n\t\t\tRETURN result",
-  "example": "EvaluationContext.Colour.Hex.Alpha(\"#5E81AC\") // Returns 0.6",
-  "author": "None",
+  "example": null,
+  "author": null,
   "version": null,
   "since": null,
   "see": null,
   "deprecated": null,
   "sections": {
     "syntax": "=== \"Syntax\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.Alpha( hexColor )\n    ```\n\n    | Parameter | Type | Required | Description |\n    |:---:|:---:|:---:|---|\n    | hexColor | <span class=\"type-label string\">STRING</span> | :material-check: | The hex color to evaluate (e.g., \"#01B8AA\") |\n\n    <span class=\"type-label number\">DOUBLE</span> Alpha value (0-1)",
-    "example": "=== \"Example\"\n\n    ```dax\n    EvaluationContext.Colour.Hex.Alpha(\"#5E81AC\") // Returns 0.6\n    ```",
+    "example": "",
     "definition": "=== \"Definition\"\n\n    ```dax\n    function 'EvaluationContext.Colour.Hex.Alpha' =\n    \t\t(\n    \t\t\thexColor: STRING\n    \t\t) =>\n    \t\t\n    \t\t\tVAR CleanHex = IF( LEFT( hexColor, 1) = \"#\", MID( hexColor, 2, 8), MID( hexColor, 1, 8 ) )\n    \t\t\tVAR AlphaHex = IF( LEN( CleanHex ) = 8, MID( CleanHex, 7, 2 ), \"FF\" )\n    \t\t\tVAR Alpha = EvaluationContext.Colour.Hex.ToInt( AlphaHex )\n    \t\t\tVAR result = ROUND( Alpha / 255, 4 )\n    \t\t\n    \t\t\tRETURN result\n    ```"
   }
 }

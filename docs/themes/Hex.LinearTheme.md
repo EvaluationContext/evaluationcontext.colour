@@ -17,7 +17,7 @@ Creates a linear gradient variant of a hex color
 
     <span class="type-label string">STRING</span> Gradient variant color in hex format
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.LinearTheme("#118DFF", 2, 7, 0.5) // Returns "#0061BBFF"

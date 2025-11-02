@@ -14,7 +14,7 @@ Determines appropriate text color (black/white) for contrast against background
 
     <span class="type-label string">STRING</span> #000000 for dark text or #FFFFFF for light text
 
-=== "Example"
+=== "Examples"
 
     ```dax
     EvaluationContext.Colour.Hex.TextColour( backgroundHex )
