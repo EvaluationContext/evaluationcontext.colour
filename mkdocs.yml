@@ -152,7 +152,7 @@ nav:
         - Int.ToHex: conversion/Int.ToHex.md
         - RGB.ToHex: conversion/RGB.ToHex.md
         - HSL.ToHex: conversion/HSL.ToHex.md
-      - hex-manipulation:
+      - Hex Manipulation:
         - hex-manipulation/index.md
         - Hex.Hue: hex-manipulation/Hex.Hue.md
         - Hex.Saturation: hex-manipulation/Hex.Saturation.md
