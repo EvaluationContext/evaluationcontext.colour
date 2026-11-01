@@ -10,6 +10,7 @@ site_description: A DAX UDF library for manipulation of hex colours for Power BI
 #     <a href="#__consent">Change cookie settings</a>
 theme:
   name: material
+  custom_dir: overrides
   language: en
   favicon: assets/images/favicon.ico
   logo: assets/images/icon.png
@@ -61,10 +62,9 @@ theme:
     - toc.integrate
   
 extra:
+  # Link preview image (overrides/main.html)
+  og_image: https://evaluationcontext.com/evaluationcontext.colour/assets/images/UDFInAction.png
   # google_site_verification: SAsOJ1OUHiMcP4hI-eYBkBD6nbsLx6hc2nWjLqdCtd0
-  analytics:
-    provider: google
-    property: G-QLDJ0V4NT0
   social:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/jakeduddy/
