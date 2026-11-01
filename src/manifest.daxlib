@@ -6,7 +6,7 @@
   "description": "A DAX UDF library for manipulation of hex colours for Power BI",
   "tags": "DAX,UDF,colour",
   "releaseNotes": "JSDoc comments added to all functions",
-  "projectUrl": "https://evaluationcontext.github.io/evaluationcontext.colour/",
+  "projectUrl": "https://evaluationcontext.com/evaluationcontext.colour/",
   "repositoryUrl": "https://github.com/EvaluationContext/evaluationcontext.colour",
   "icon": "/icon.png",
   "readme": "/README.md"
